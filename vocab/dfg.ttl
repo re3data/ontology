@@ -13,6 +13,7 @@
 @prefix datacite: <http://purl.org/spar/datacite/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix r3dfg: <http://www.re3data.org/vocab/dfg#> .						#TODO define uri for vocabs
+@prefix r3common: <http://www.re3data.org/vocab/common#> .						#TODO define uri for vocabs
 
 @base	<http://www.re3data.org/vocab/dfg#> .
  
@@ -28,10 +29,20 @@
 	dct:publisher <http://re3data.org> ;
 	owl:import <http://www.re3data.org/vocab/common> .	
 	
+	
+##### r3dfg:DfgClassificationNotation (Datatype) #####
+r3dfg:DfgClassificationNotation
+	a rdfs:Datatype ;
+   	rdfs:label 		"DFG classification notation"@en ;
+   	rdfs:comment	"Datatype for the skos:notation property in the r3dfg:DfgClassification scheme."@en	;
+	owl:onDatatype  xsd:string ;
+	owl:withRestrictions (  [ xsd:pattern "[0-9]{7}" ] ) .
+	
+	
 ############# r3dfg:DfgClassification ################
 r3dfg:DfgClassification
-	a			 	r3dfg:ClassificationScheme	;
-	rdfs:subClassOf skos:Concept, datacite:ResourceIdentifier	;
+	a			 	r3common:ClassificationScheme	;
+	rdfs:subClassOf r3common:ClassificationIdentifier	;
 	dct:title		"Research classification scheme of the Deutsche Forschungsgemeinschaft (DFG)"@en ;
 	rdfs:label		"DFG classification scheme"@en ;
 	dct:description	"TODO"@en	;		
@@ -88,7 +99,7 @@ r3dfg:Humanities
 	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Humanities"@en	;
-	skos:prefLabel "Humanities"@en	;
+	skos:prefLabel 	"Humanities"@en	;
 	skos:notation	"1100000"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:HumanitiesAndSocialSciences	;
 	skos:narrower 	r3dfg:AncientCultures	;
@@ -156,12 +167,3 @@ r3dfg:EgyptologyAndAncientNearEasternStudies
 	skos:note		"TODO"@en .
 	
 	#TODO add induviduals
-	
-	
-########## r3dfg:DfgClassificationNotation ###########
-r3dfg:DfgClassificationNotation
-	a rdfs:Datatype ;
-   	rdfs:label 		"DFG classification notation"@en ;
-   	rdfs:comment	"Datatype for the skos:notation property in the r3dfg:DfgClassification scheme."@en	;
-	owl:onDatatype  xsd:string ;
-	owl:withRestrictions (  [ xsd:pattern "[0-9]{7}" ] ) .
