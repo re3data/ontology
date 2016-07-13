@@ -1,0 +1,54 @@
+############## Preamble ###################				TODO!
+### re3data.org controlled vocabularies ###
+### ...
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix r3d: <http://www.re3data.org/schema/3-0#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix r3common: <http://www.re3data.org/vocab/common#> .						#TODO define uri for vocabs
+
+@base	<http://www.re3data.org/vocab/common#> .
+ 
+<http://www.re3data.org/vocab/common>
+    a owl:Ontology ;
+	vann:preferredNamespaceUri "http://www.re3data.org/vocab/common#" ;	#TODO
+    vann:preferredNamespacePrefix "r3common" ;								#TODO
+    owl:versionInfo "1.0.0" ; 
+    dct:modified "2016-06-12" ;
+    rdfs:comment "This ontology fragment provides common concepts and induviduals used with the re3data.org ontology and vocabularies."@en ;		#todo
+    rdfs:label "re3data common resources"@en ;
+	dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;#todo
+	dct:publisher <http://re3data.org> .
+    
+    
+############### Publisher #################
+<http://re3data.org>		#TODO change uri , mbox, name if necessary
+	a                        foaf:Agent ;
+	foaf:mbox                "someBeautifuleAddress@re3data.org" ;
+	foaf:homepage			 <http://www.re3data.org>	;
+	foaf:name                "re3data.org" .
+	
+############## Contributor ################    
+<http://wiki.dbpedia.org/Association/Persons/Freudenberg>
+    a                        foaf:Agent ;
+    foaf:mbox                "freudenberg@informatik.uni-leipzig.de" ;
+    foaf:name                "Markus Freudenberg" .
+    
+	
+######## ClassificationShemeSuperClass ##########
+r3common:ClassificationScheme
+	a	owl:Class	;
+	rdfs:subClassOf	skos:ConceptScheme, datacite:ResourceIdentifierScheme	;
+	dct:title		"Classification Sheme"@en ;
+	rdfs:label		"classification sheme"@en ;
+	dct:description	"The top class of all concept/identifier schemes used with the r3d:subject property."@en	;	
+	dct:modified	"12-07-2016"^^xsd:date	;	
+	dct:publisher	<http://re3data.org>	;
+	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> .	#TODO if any
