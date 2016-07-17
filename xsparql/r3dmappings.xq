@@ -2,500 +2,254 @@ module namespace re3mappings="http://www.re3data.org/xsparql/r3dmappings" ;
 
 declare namespace r3d="http://www.re3data.org/schema/3-0/";
 declare namespace lvont="http://lexvo.org/ontology#";
+declare namespace xsparql="http://xsparql.deri.org/demo/xquery/sparql-functions.xquery";
 declare namespace sparql="http://xsparql.deri.org/demo/xquery/sparql-functions.xquery";
+declare namespace r3parse="http://www.re3data.org/vocab/parse#";
+declare namespace r3instt="http://www.re3data.org/vocab/instt#";
+declare namespace r3respt="http://www.re3data.org/vocab/respt#";
+declare namespace r3polty="http://www.re3data.org/vocab/polty#";
+declare namespace r3accty="http://www.re3data.org/vocab/accty#";
+declare namespace r3accre="http://www.re3data.org/vocab/accre#";
+declare namespace r3apity="http://www.re3data.org/vocab/apity#";
+declare namespace r3ciref="http://www.re3data.org/vocab/ciref#";
+declare namespace r3pidsys="http://www.re3data.org/vocab/pidsys#";
+declare namespace r3aidsys="http://www.re3data.org/vocab/aidsys#";
 
-(: mapping functions between lvont:Language uri and 639-1 alpha3 string :)
-
-declare function re3mappings:get-country-map () {
-	let $zw := (		
-		"http://lexvo.org/id/iso3166/II", "international institutions", "AA", "AAA",
-		"http://lexvo.org/id/iso3166/AD", "Andorra", "AD", "AND",
-		"http://lexvo.org/id/iso3166/AE", "United Arab Emirates", "AE", "ARE",
-		"http://lexvo.org/id/iso3166/AF", "Afghanistan", "AF", "AFG",
-		"http://lexvo.org/id/iso3166/AG", "Antigua and Barbuda", "AG", "ATG",
-		"http://lexvo.org/id/iso3166/AI", "Anguilla", "AI", "AIA",
-		"http://lexvo.org/id/iso3166/AL", "Albania", "AL", "ALB",
-		"http://lexvo.org/id/iso3166/AM", "Armenia", "AM", "ARM",
-		"http://lexvo.org/id/iso3166/AN", "Netherlands Antilles", "AN", "ANT",
-		"http://lexvo.org/id/iso3166/AO", "Angola", "AO", "AGO",
-		"http://lexvo.org/id/iso3166/AQ", "Antarctica", "AQ", "ATA",
-		"http://lexvo.org/id/iso3166/AR", "Argentina", "AR", "ARG",
-		"http://lexvo.org/id/iso3166/AS", "American Samoa", "AS", "ASM",
-		"http://lexvo.org/id/iso3166/AT", "Austria", "AT", "AUT",
-		"http://lexvo.org/id/iso3166/AU", "Australia", "AU", "AUS",
-		"http://lexvo.org/id/iso3166/AW", "Aruba", "AW", "ABW",
-		"http://lexvo.org/id/iso3166/AX", "Åland Islands", "AX", "ALA",
-		"http://lexvo.org/id/iso3166/AZ", "Azerbaijan", "AZ", "AZE",
-		"http://lexvo.org/id/iso3166/BA", "Bosnia and Herzegovina", "BA", "BIH",
-		"http://lexvo.org/id/iso3166/BB", "Barbados", "BB", "BRB",
-		"http://lexvo.org/id/iso3166/BD", "Bangladesh", "BD", "BGD",
-		"http://lexvo.org/id/iso3166/BE", "Belgium", "BE", "BEL",
-		"http://lexvo.org/id/iso3166/BF", "Burkina Faso", "BF", "BFA",
-		"http://lexvo.org/id/iso3166/BG", "Bulgaria", "BG", "BGR",
-		"http://lexvo.org/id/iso3166/BH", "Bahrain", "BH", "BHR",
-		"http://lexvo.org/id/iso3166/BI", "Burundi", "BI", "BDI",
-		"http://lexvo.org/id/iso3166/BJ", "Benin", "BJ", "BEN",
-		"http://lexvo.org/id/iso3166/BL", "Saint Barthélemy", "BL", "BLM",
-		"http://lexvo.org/id/iso3166/BM", "Bermuda", "BM", "BMU",
-		"http://lexvo.org/id/iso3166/BN", "Brunei", "BN", "BRN",
-		"http://lexvo.org/id/iso3166/BO", "Bolivia", "BO", "BOL",
-		"http://lexvo.org/id/iso3166/BQ", "Caribbean Netherlands", "BQ", "BES",
-		"http://lexvo.org/id/iso3166/BR", "Brazil", "BR", "BRA",
-		"http://lexvo.org/id/iso3166/BS", "Bahamas", "BS", "BHS",
-		"http://lexvo.org/id/iso3166/BT", "Bhutan", "BT", "BTN",
-		"http://lexvo.org/id/iso3166/BV", "Bouvet Island", "BV", "BVT",
-		"http://lexvo.org/id/iso3166/BW", "Botswana", "BW", "BWA",
-		"http://lexvo.org/id/iso3166/BY", "Belarus", "BY", "BLR",
-		"http://lexvo.org/id/iso3166/BZ", "Belize", "BZ", "BLZ",
-		"http://lexvo.org/id/iso3166/CA", "Canada", "CA", "CAN",
-		"http://lexvo.org/id/iso3166/CC", "Cocos [Keeling] Islands", "CC", "CCK",
-		"http://lexvo.org/id/iso3166/CD", "Congo - Kinshasa", "CD", "COD",
-		"http://lexvo.org/id/iso3166/CF", "Central African Republic", "CF", "CAF",
-		"http://lexvo.org/id/iso3166/CG", "Congo - Brazzaville", "CG", "COG",
-		"http://lexvo.org/id/iso3166/CH", "Switzerland", "CH", "CHE",
-		"http://lexvo.org/id/iso3166/CI", "Côte d’Ivoire", "CI", "CIV",
-		"http://lexvo.org/id/iso3166/CK", "Cook Islands", "CK", "COK",
-		"http://lexvo.org/id/iso3166/CL", "Chile", "CL", "CHL",
-		"http://lexvo.org/id/iso3166/CM", "Cameroon", "CM", "CMR",
-		"http://lexvo.org/id/iso3166/CN", "China", "CN", "CHN",
-		"http://lexvo.org/id/iso3166/CO", "Colombia", "CO", "COL",
-		"http://lexvo.org/id/iso3166/CR", "Costa Rica", "CR", "CRI",
-		"http://lexvo.org/id/iso3166/CU", "Cuba", "CU", "CUB",
-		"http://lexvo.org/id/iso3166/CV", "Cape Verde", "CV", "CPV",
-		"http://lexvo.org/id/iso3166/CW", "Curaçao", "CW", "CUW",
-		"http://lexvo.org/id/iso3166/CX", "Christmas Island", "CX", "CXR",
-		"http://lexvo.org/id/iso3166/CY", "Cyprus", "CY", "CYP",
-		"http://lexvo.org/id/iso3166/CZ", "Czech Republic", "CZ", "CZE",
-		"http://lexvo.org/id/iso3166/DE", "Germany", "DE", "DEU",
-		"http://lexvo.org/id/iso3166/DJ", "Djibouti", "DJ", "DJI",
-		"http://lexvo.org/id/iso3166/DK", "Denmark", "DK", "DNK",
-		"http://lexvo.org/id/iso3166/DM", "Dominica", "DM", "DMA",
-		"http://lexvo.org/id/iso3166/DO", "Dominican Republic", "DO", "DOM",
-		"http://lexvo.org/id/iso3166/DZ", "Algeria", "DZ", "DZA",
-		"http://lexvo.org/id/iso3166/EC", "Ecuador", "EC", "ECU",
-		"http://lexvo.org/id/iso3166/EE", "Estonia", "EE", "EST",
-		"http://lexvo.org/id/iso3166/EG", "Egypt", "EG", "EGY",
-		"http://lexvo.org/id/iso3166/EH", "Western Sahara", "EH", "ESH",
-		"http://lexvo.org/id/iso3166/ER", "Eritrea", "ER", "ERI",
-		"http://lexvo.org/id/iso3166/ES", "Spain", "ES", "ESP",
-		"http://lexvo.org/id/iso3166/ET", "Ethiopia", "ET", "ETH",
-		"http://lexvo.org/id/iso3166/EU", "European Union", "EU", "EUE",
-		"http://lexvo.org/id/iso3166/FI", "Finland", "FI", "FIN",
-		"http://lexvo.org/id/iso3166/FJ", "Fiji", "FJ", "FJI",
-		"http://lexvo.org/id/iso3166/FK", "Falkland Islands", "FK", "FLK",
-		"http://lexvo.org/id/iso3166/FM", "Micronesia", "FM", "FSM",
-		"http://lexvo.org/id/iso3166/FO", "Faroe Islands", "FO", "FRO",
-		"http://lexvo.org/id/iso3166/FR", "France", "FR", "FRA",
-		"http://lexvo.org/id/iso3166/GA", "Gabon", "GA", "GAB",
-		"http://lexvo.org/id/iso3166/GB", "United Kingdom", "GB", "GBR",
-		"http://lexvo.org/id/iso3166/GD", "Grenada", "GD", "GRD",
-		"http://lexvo.org/id/iso3166/GE", "Georgia", "GE", "GEO",
-		"http://lexvo.org/id/iso3166/GF", "French Guiana", "GF", "GUF",
-		"http://lexvo.org/id/iso3166/GG", "Guernsey", "GG", "GGY",
-		"http://lexvo.org/id/iso3166/GH", "Ghana", "GH", "GHA",
-		"http://lexvo.org/id/iso3166/GI", "Gibraltar", "GI", "GIB",
-		"http://lexvo.org/id/iso3166/GL", "Greenland", "GL", "GRL",
-		"http://lexvo.org/id/iso3166/GM", "Gambia", "GM", "GMB",
-		"http://lexvo.org/id/iso3166/GN", "Guinea", "GN", "GIN",
-		"http://lexvo.org/id/iso3166/GP", "Guadeloupe", "GP", "GLP",
-		"http://lexvo.org/id/iso3166/GQ", "Equatorial Guinea", "GQ", "GNQ",
-		"http://lexvo.org/id/iso3166/GR", "Greece", "GR", "GRC",
-		"http://lexvo.org/id/iso3166/GS", "South Georgia and the South Sandwich Islands", "GS", "SGS",
-		"http://lexvo.org/id/iso3166/GT", "Guatemala", "GT", "GTM",
-		"http://lexvo.org/id/iso3166/GU", "Guam", "GU", "GUM",
-		"http://lexvo.org/id/iso3166/GW", "Guinea-Bissau", "GW", "GNB",
-		"http://lexvo.org/id/iso3166/GY", "Guyana", "GY", "GUY",
-		"http://lexvo.org/id/iso3166/HK", "Hong Kong", "HK", "HKG",
-		"http://lexvo.org/id/iso3166/HM", "Heard Island and McDonald Islands", "HM", "HMD",
-		"http://lexvo.org/id/iso3166/HN", "Honduras", "HN", "HND",
-		"http://lexvo.org/id/iso3166/HR", "Croatia", "HR", "HRV",
-		"http://lexvo.org/id/iso3166/HT", "Haiti", "HT", "HTI",
-		"http://lexvo.org/id/iso3166/HU", "Hungary", "HU", "HUN",
-		"http://lexvo.org/id/iso3166/ID", "Indonesia", "ID", "IDN",
-		"http://lexvo.org/id/iso3166/IE", "Republic of Ireland", "IE", "IRL",
-		"http://lexvo.org/id/iso3166/IL", "Israel", "IL", "ISR",
-		"http://lexvo.org/id/iso3166/IM", "Isle of Man", "IM", "IMN",
-		"http://lexvo.org/id/iso3166/IN", "India", "IN", "IND",
-		"http://lexvo.org/id/iso3166/IO", "British Indian Ocean Territory", "IO", "IOT",
-		"http://lexvo.org/id/iso3166/IQ", "Iraq", "IQ", "IRQ",
-		"http://lexvo.org/id/iso3166/IR", "Iran", "IR", "IRN",
-		"http://lexvo.org/id/iso3166/IS", "Iceland", "IS", "ISL",
-		"http://lexvo.org/id/iso3166/IT", "Italy", "IT", "ITA",
-		"http://lexvo.org/id/iso3166/JE", "Jersey", "JE", "JEY",
-		"http://lexvo.org/id/iso3166/JM", "Jamaica", "JM", "JAM",
-		"http://lexvo.org/id/iso3166/JO", "Jordan", "JO", "JOR",
-		"http://lexvo.org/id/iso3166/JP", "Japan", "JP", "JPN",
-		"http://lexvo.org/id/iso3166/KE", "Kenya", "KE", "KEN",
-		"http://lexvo.org/id/iso3166/KG", "Kyrgyzstan", "KG", "KGZ",
-		"http://lexvo.org/id/iso3166/KH", "Cambodia", "KH", "KHM",
-		"http://lexvo.org/id/iso3166/KI", "Kiribati", "KI", "KIR",
-		"http://lexvo.org/id/iso3166/KM", "Comoros", "KM", "COM",
-		"http://lexvo.org/id/iso3166/KN", "Saint Kitts and Nevis", "KN", "KNA",
-		"http://lexvo.org/id/iso3166/KP", "North Korea", "KP", "PRK",
-		"http://lexvo.org/id/iso3166/KR", "South Korea", "KR", "KOR",
-		"http://lexvo.org/id/iso3166/KW", "Kuwait", "KW", "KWT",
-		"http://lexvo.org/id/iso3166/KY", "Cayman Islands", "KY", "CYM",
-		"http://lexvo.org/id/iso3166/KZ", "Kazakhstan", "KZ", "KAZ",
-		"http://lexvo.org/id/iso3166/LA", "Laos", "LA", "LAO",
-		"http://lexvo.org/id/iso3166/LB", "Lebanon", "LB", "LBN",
-		"http://lexvo.org/id/iso3166/LC", "Saint Lucia", "LC", "LCA",
-		"http://lexvo.org/id/iso3166/LI", "Liechtenstein", "LI", "LIE",
-		"http://lexvo.org/id/iso3166/LK", "Sri Lanka", "LK", "LKA",
-		"http://lexvo.org/id/iso3166/LR", "Liberia", "LR", "LBR",
-		"http://lexvo.org/id/iso3166/LS", "Lesotho", "LS", "LSO",
-		"http://lexvo.org/id/iso3166/LT", "Lithuania", "LT", "LTU",
-		"http://lexvo.org/id/iso3166/LU", "Luxembourg", "LU", "LUX",
-		"http://lexvo.org/id/iso3166/LV", "Latvia", "LV", "LVA",
-		"http://lexvo.org/id/iso3166/LY", "Libya", "LY", "LBY",
-		"http://lexvo.org/id/iso3166/MA", "Morocco", "MA", "MAR",
-		"http://lexvo.org/id/iso3166/MC", "Monaco", "MC", "MCO",
-		"http://lexvo.org/id/iso3166/MD", "Moldova", "MD", "MDA",
-		"http://lexvo.org/id/iso3166/ME", "Montenegro", "ME", "MNE",
-		"http://lexvo.org/id/iso3166/MF", "Collectivity of Saint Martin", "MF", "MAF",
-		"http://lexvo.org/id/iso3166/MG", "Madagascar", "MG", "MDG",
-		"http://lexvo.org/id/iso3166/MH", "Marshall Islands", "MH", "MHL",
-		"http://lexvo.org/id/iso3166/MK", "Macedonia", "MK", "MKD",
-		"http://lexvo.org/id/iso3166/ML", "Mali", "ML", "MLI",
-		"http://lexvo.org/id/iso3166/MM", "Myanmar [Burma]", "MM", "MMR",
-		"http://lexvo.org/id/iso3166/MN", "Mongolia", "MN", "MNG",
-		"http://lexvo.org/id/iso3166/MO", "Macau", "MO", "MAC",
-		"http://lexvo.org/id/iso3166/MP", "Northern Mariana Islands", "MP", "MNP",
-		"http://lexvo.org/id/iso3166/MQ", "Martinique", "MQ", "MTQ",
-		"http://lexvo.org/id/iso3166/MR", "Mauritania", "MR", "MRT",
-		"http://lexvo.org/id/iso3166/MS", "Montserrat", "MS", "MSR",
-		"http://lexvo.org/id/iso3166/MT", "Malta", "MT", "MLT",
-		"http://lexvo.org/id/iso3166/MU", "Mauritius", "MU", "MUS",
-		"http://lexvo.org/id/iso3166/MV", "Maldives", "MV", "MDV",
-		"http://lexvo.org/id/iso3166/MW", "Malawi", "MW", "MWI",
-		"http://lexvo.org/id/iso3166/MX", "Mexico", "MX", "MEX",
-		"http://lexvo.org/id/iso3166/MY", "Malaysia", "MY", "MYS",
-		"http://lexvo.org/id/iso3166/MZ", "Mozambique", "MZ", "MOZ",
-		"http://lexvo.org/id/iso3166/NA", "Namibia", "NA", "NAM",
-		"http://lexvo.org/id/iso3166/NC", "New Caledonia", "NC", "NCL",
-		"http://lexvo.org/id/iso3166/NE", "Niger", "NE", "NER",
-		"http://lexvo.org/id/iso3166/NF", "Norfolk Island", "NF", "NFK",
-		"http://lexvo.org/id/iso3166/NG", "Nigeria", "NG", "NGA",
-		"http://lexvo.org/id/iso3166/NI", "Nicaragua", "NI", "NIC",
-		"http://lexvo.org/id/iso3166/NL", "Netherlands", "NL", "NLD",
-		"http://lexvo.org/id/iso3166/NO", "Norway", "NO", "NOR",
-		"http://lexvo.org/id/iso3166/NP", "Nepal", "NP", "NPL",
-		"http://lexvo.org/id/iso3166/NR", "Nauru", "NR", "NRU",
-		"http://lexvo.org/id/iso3166/NU", "Niue", "NU", "NIU",
-		"http://lexvo.org/id/iso3166/NZ", "New Zealand", "NZ", "NZL",
-		"http://lexvo.org/id/iso3166/OM", "Oman", "OM", "OMN",
-		"http://lexvo.org/id/iso3166/PA", "Panama", "PA", "PAN",
-		"http://lexvo.org/id/iso3166/PE", "Peru", "PE", "PER",
-		"http://lexvo.org/id/iso3166/PF", "French Polynesia", "PF", "PYF",
-		"http://lexvo.org/id/iso3166/PG", "Papua New Guinea", "PG", "PNG",
-		"http://lexvo.org/id/iso3166/PH", "Philippines", "PH", "PHL",
-		"http://lexvo.org/id/iso3166/PK", "Pakistan", "PK", "PAK",
-		"http://lexvo.org/id/iso3166/PL", "Poland", "PL", "POL",
-		"http://lexvo.org/id/iso3166/PM", "Saint Pierre and Miquelon", "PM", "SPM",
-		"http://lexvo.org/id/iso3166/PN", "Pitcairn Islands", "PN", "PCN",
-		"http://lexvo.org/id/iso3166/PR", "Puerto Rico", "PR", "PRI",
-		"http://lexvo.org/id/iso3166/PS", "Palestinian Territories", "PS", "PSE",
-		"http://lexvo.org/id/iso3166/PT", "Portugal", "PT", "PRT",
-		"http://lexvo.org/id/iso3166/PW", "Palau", "PW", "PLW",
-		"http://lexvo.org/id/iso3166/PY", "Paraguay", "PY", "PRY",
-		"http://lexvo.org/id/iso3166/QA", "Qatar", "QA", "QAT",
-		"http://lexvo.org/id/iso3166/RE", "Réunion", "RE", "REU",
-		"http://lexvo.org/id/iso3166/RO", "Romania", "RO", "ROU",
-		"http://lexvo.org/id/iso3166/RS", "Serbia", "RS", "SRB",
-		"http://lexvo.org/id/iso3166/RU", "Russia", "RU", "RUS",
-		"http://lexvo.org/id/iso3166/RW", "Rwanda", "RW", "RWA",
-		"http://lexvo.org/id/iso3166/SA", "Saudi Arabia", "SA", "SAU",
-		"http://lexvo.org/id/iso3166/SB", "Solomon Islands", "SB", "SLB",
-		"http://lexvo.org/id/iso3166/SC", "Seychelles", "SC", "SYC",
-		"http://lexvo.org/id/iso3166/SD", "Sudan", "SD", "SDN",
-		"http://lexvo.org/id/iso3166/SE", "Sweden", "SE", "SWE",
-		"http://lexvo.org/id/iso3166/SG", "Singapore", "SG", "SGP",
-		"http://lexvo.org/id/iso3166/SH", "Saint Helena, Ascension and Tristan da Cunha", "SH", "SHN",
-		"http://lexvo.org/id/iso3166/SI", "Slovenia", "SI", "SVN",
-		"http://lexvo.org/id/iso3166/SJ", "Svalbard and Jan Mayen", "SJ", "SJM",
-		"http://lexvo.org/id/iso3166/SK", "Slovakia", "SK", "SVK",
-		"http://lexvo.org/id/iso3166/SL", "Sierra Leone", "SL", "SLE",
-		"http://lexvo.org/id/iso3166/SM", "San Marino", "SM", "SMR",
-		"http://lexvo.org/id/iso3166/SN", "Senegal", "SN", "SEN",
-		"http://lexvo.org/id/iso3166/SO", "Somalia", "SO", "SOM",
-		"http://lexvo.org/id/iso3166/SR", "Suriname", "SR", "SUR",
-		"http://lexvo.org/id/iso3166/ST", "São Tomé and Príncipe", "ST", "STP",
-		"http://lexvo.org/id/iso3166/SV", "El Salvador", "SV", "SLV",
-		"http://lexvo.org/id/iso3166/SX", "Sint Maarten", "SX", "SXM",
-		"http://lexvo.org/id/iso3166/SY", "Syria", "SY", "SYR",
-		"http://lexvo.org/id/iso3166/SZ", "Swaziland", "SZ", "SWZ",
-		"http://lexvo.org/id/iso3166/TC", "Turks and Caicos Islands", "TC", "TCA",
-		"http://lexvo.org/id/iso3166/TD", "Chad", "TD", "TCD",
-		"http://lexvo.org/id/iso3166/TF", "French Southern Territories", "TF", "ATF",
-		"http://lexvo.org/id/iso3166/TG", "Togo", "TG", "TGO",
-		"http://lexvo.org/id/iso3166/TH", "Thailand", "TH", "THA",
-		"http://lexvo.org/id/iso3166/TJ", "Tajikistan", "TJ", "TJK",
-		"http://lexvo.org/id/iso3166/TK", "Tokelau", "TK", "TKL",
-		"http://lexvo.org/id/iso3166/TL", "East Timor", "TL", "TLS",
-		"http://lexvo.org/id/iso3166/TM", "Turkmenistan", "TM", "TKM",
-		"http://lexvo.org/id/iso3166/TN", "Tunisia", "TN", "TUN",
-		"http://lexvo.org/id/iso3166/TO", "Tonga", "TO", "TON",
-		"http://lexvo.org/id/iso3166/TR", "Turkey", "TR", "TUR",
-		"http://lexvo.org/id/iso3166/TT", "Trinidad and Tobago", "TT", "TTO",
-		"http://lexvo.org/id/iso3166/TV", "Tuvalu", "TV", "TUV",
-		"http://lexvo.org/id/iso3166/TW", "Taiwan", "TW", "TWN",
-		"http://lexvo.org/id/iso3166/TZ", "Tanzania", "TZ", "TZA",
-		"http://lexvo.org/id/iso3166/UA", "Ukraine", "UA", "UKR",
-		"http://lexvo.org/id/iso3166/UG", "Uganda", "UG", "UGA",
-		"http://lexvo.org/id/iso3166/UM", "U.S. Outlying Islands", "UM", "UMI",
-		"http://lexvo.org/id/iso3166/US", "United States", "US", "USA",
-		"http://lexvo.org/id/iso3166/UY", "Uruguay", "UY", "URY",
-		"http://lexvo.org/id/iso3166/UZ", "Uzbekistan", "UZ", "UZB",
-		"http://lexvo.org/id/iso3166/VA", "Vatican City", "VA", "VAT",
-		"http://lexvo.org/id/iso3166/VC", "Saint Vincent and the Grenadines", "VC", "VCT",
-		"http://lexvo.org/id/iso3166/VE", "Venezuela", "VE", "VEN",
-		"http://lexvo.org/id/iso3166/VG", "British Virgin Islands", "VG", "VGB",
-		"http://lexvo.org/id/iso3166/VI", "U.S. Virgin Islands", "VI", "VIR",
-		"http://lexvo.org/id/iso3166/VN", "Vietnam", "VN", "VNM",
-		"http://lexvo.org/id/iso3166/VU", "Vanuatu", "VU", "VUT",
-		"http://lexvo.org/id/iso3166/WF", "Wallis and Futuna", "WF", "WLF",
-		"http://lexvo.org/id/iso3166/WS", "Samoa", "WS", "WSM",
-		"http://lexvo.org/id/iso3166/YE", "Yemen", "YE", "YEM",
-		"http://lexvo.org/id/iso3166/YT", "Mayotte", "YT", "MYT",
-		"http://lexvo.org/id/iso3166/ZA", "South Africa", "ZA", "ZAF",
-		"http://lexvo.org/id/iso3166/ZM", "Zambia", "ZM", "ZMB",
-		"http://lexvo.org/id/iso3166/ZW", "Zimbabwe", "ZW", "ZWE"
-		)
-	return $zw
+(: get namespace uri of prefixed uri string :)
+declare function re3mappings:resolve-prefixed-uri ( $n as xs:string )  {
+    let $zw1 := fn:substring($n, 0, string-length(substring-before($n, ":"))+2)
+    return if(fn:index-of(("r3d:", "r3parse:", "r3instt:", "r3respt:", "r3polty:", "r3accty:", "r3accre:", "r3apity:", "r3ciref:", "r3pidsys:", "r3aidsys:", "lvont:"), $zw1) > 0) then 
+		fn:concat(fn:namespace-uri(element {fn:concat($zw1, "x")} {""}), fn:substring($n, string-length(substring-before($n, ":"))+2))
+	else
+		$n
 };
 
-declare function re3mappings:get-country-index ( $alpha3 as xs:string )  {
-	let $countries := re3mappings:get-country-map()
+declare function re3mappings:capitalize-first( $arg as xs:string? )  as xs:string? {
 
+   fn:concat(fn:upper-case(fn:substring($arg,1,1)), fn:lower-case(fn:substring($arg,2)))
+} ;
+
+declare function re3mappings:get-country ( $alpha3 as xs:string )  {
 	(: re3data special alpha3 strings: EEC, AAA :)
 	let $alpha3 := fn:replace(fn:replace($alpha3,'\s+$',''),'^\s+','')
 	let $alpha3 := if(fn:upper-case($alpha3) = "EEC") then "EUE" else fn:upper-case($alpha3)
 
-	let $ind := fn:index-of($countries, $alpha3)
-
-	let $zw := if($ind < 3) then
-		fn:error(QName("", $alpha3), "639-1 alpha-3 language code is unknown:", "") else()
-	return $ind
-};
-
-declare function re3mappings:get-country ( $alpha3 as xs:string )  {
-	let $countries := re3mappings:get-country-map()
-	let $ind := re3mappings:get-country-index ( $alpha3 )
-	let $zw := ($countries[$ind -3], $countries[$ind -2], $countries[$ind -1], $countries[$ind])
+	let $query := fn:encode-for-uri(fn:concat("
+PREFIX lvont: <http://lexvo.org/ontology#>
+SELECT *
+FROM <http://lexvo.org/id>
+WHERE{
+?s a lvont:GeographicRegion.
+?s rdfs:label ?label.
+?s lvont:code-a2 ?a2.
+?s lvont:code-a3 ?a3.
+FILTER(str(?a3) = '", $alpha3, "')
+FILTER(lang(?label) = 'en')
+}"))
+	let $url := fn:concat("http://localhost:8890/sparql?format=json&amp;query=", $query)
+	let $ele := sparql:json-doc($url)//results/bindings[1]/arrayElement
+	let $zw := ($ele/s/value/text(), $ele/label/value/text(), $ele/a2/value/text(), $ele/a3/value/text())
 	return $zw
-};
-
-declare function re3mappings:get-language-map () {
-	let $zw := (
-		"http://lexvo.org/id/iso639-3/aar", "Afar", "aa", "aar",
-		"http://lexvo.org/id/iso639-3/abk", "Abkhazian", "ab", "abk",
-		"http://lexvo.org/id/iso639-3/afr", "Afrikaans", "af", "afr",
-		"http://lexvo.org/id/iso639-3/aka", "Akan", "ak", "aka",
-		"http://lexvo.org/id/iso639-3/amh", "Amharic", "am", "amh",
-		"http://lexvo.org/id/iso639-3/ara", "Arabic", "ar", "ara",
-		"http://lexvo.org/id/iso639-3/arg", "Aragonese", "an", "arg",
-		"http://lexvo.org/id/iso639-3/asm", "Assamese", "as", "asm",
-		"http://lexvo.org/id/iso639-3/ava", "Avaric", "av", "ava",
-		"http://lexvo.org/id/iso639-3/ave", "Avestan", "ae", "ave",
-		"http://lexvo.org/id/iso639-3/aym", "Aymara", "ay", "aym",
-		"http://lexvo.org/id/iso639-3/aze", "Azerbaijani", "az", "aze",
-		"http://lexvo.org/id/iso639-3/bak", "Bashkir", "ba", "bak",
-		"http://lexvo.org/id/iso639-3/bam", "Bambara", "bm", "bam",
-		"http://lexvo.org/id/iso639-3/bel", "Belarusian", "be", "bel",
-		"http://lexvo.org/id/iso639-3/ben", "Bengali", "bn", "ben",
-		"http://lexvo.org/id/iso639-3/bis", "Bislama", "bi", "bis",
-		"http://lexvo.org/id/iso639-3/bod", "Tibetan", "bo", "bod",
-		"http://lexvo.org/id/iso639-3/bos", "Bosnian", "bs", "bos",
-		"http://lexvo.org/id/iso639-3/bre", "Breton", "br", "bre",
-		"http://lexvo.org/id/iso639-3/bul", "Bulgarian", "bg", "bul",
-		"http://lexvo.org/id/iso639-3/cat", "Catalan", "ca", "cat",
-		"http://lexvo.org/id/iso639-3/ces", "Czech", "cs", "ces",
-		"http://lexvo.org/id/iso639-3/cha", "Chamorro", "ch", "cha",
-		"http://lexvo.org/id/iso639-3/che", "Chechen", "ce", "che",
-		"http://lexvo.org/id/iso639-3/chu", "Church Slavic", "cu", "chu",
-		"http://lexvo.org/id/iso639-3/chv", "Chuvash", "cv", "chv",
-		"http://lexvo.org/id/iso639-3/cor", "Cornish", "kw", "cor",
-		"http://lexvo.org/id/iso639-3/cos", "Corsican", "co", "cos",
-		"http://lexvo.org/id/iso639-3/cre", "Cree", "cr", "cre",
-		"http://lexvo.org/id/iso639-3/cym", "Welsh", "cy", "cym",
-		"http://lexvo.org/id/iso639-3/dan", "Danish", "da", "dan",
-		"http://lexvo.org/id/iso639-3/deu", "German", "de", "deu",
-		"http://lexvo.org/id/iso639-3/div", "Dhivehi", "dv", "div",
-		"http://lexvo.org/id/iso639-3/dzo", "Dzongkha", "dz", "dzo",
-		"http://lexvo.org/id/iso639-3/ell", "Modern Greek (1453-)", "el", "ell",
-		"http://lexvo.org/id/iso639-3/eng", "English", "en", "eng",
-		"http://lexvo.org/id/iso639-3/epo", "Esperanto", "eo", "epo",
-		"http://lexvo.org/id/iso639-3/est", "Estonian", "et", "est",
-		"http://lexvo.org/id/iso639-3/eus", "Basque", "eu", "eus",
-		"http://lexvo.org/id/iso639-3/ewe", "Ewe", "ee", "ewe",
-		"http://lexvo.org/id/iso639-3/fao", "Faroese", "fo", "fao",
-		"http://lexvo.org/id/iso639-3/fas", "Persian", "fa", "fas",
-		"http://lexvo.org/id/iso639-3/fij", "Fijian", "fj", "fij",
-		"http://lexvo.org/id/iso639-3/fin", "Finnish", "fi", "fin",
-		"http://lexvo.org/id/iso639-3/fra", "French", "fr", "fra",
-		"http://lexvo.org/id/iso639-3/fry", "Western Frisian", "fy", "fry",
-		"http://lexvo.org/id/iso639-3/ful", "Fulah", "ff", "ful",
-		"http://lexvo.org/id/iso639-3/gla", "Scottish Gaelic", "gd", "gla",
-		"http://lexvo.org/id/iso639-3/gle", "Irish", "ga", "gle",
-		"http://lexvo.org/id/iso639-3/glg", "Galician", "gl", "glg",
-		"http://lexvo.org/id/iso639-3/glv", "Manx", "gv", "glv",
-		"http://lexvo.org/id/iso639-3/grn", "Guarani", "gn", "grn",
-		"http://lexvo.org/id/iso639-3/guj", "Gujarati", "gu", "guj",
-		"http://lexvo.org/id/iso639-3/hat", "Haitian", "ht", "hat",
-		"http://lexvo.org/id/iso639-3/hau", "Hausa", "ha", "hau",
-		"http://lexvo.org/id/iso639-3/hbs", "Serbo-Croatian", "sh", "hbs",
-		"http://lexvo.org/id/iso639-3/heb", "Hebrew", "he", "heb",
-		"http://lexvo.org/id/iso639-3/her", "Herero", "hz", "her",
-		"http://lexvo.org/id/iso639-3/hin", "Hindi", "hi", "hin",
-		"http://lexvo.org/id/iso639-3/hmo", "Hiri Motu", "ho", "hmo",
-		"http://lexvo.org/id/iso639-3/hrv", "Croatian", "hr", "hrv",
-		"http://lexvo.org/id/iso639-3/hun", "Hungarian", "hu", "hun",
-		"http://lexvo.org/id/iso639-3/hye", "Armenian", "hy", "hye",
-		"http://lexvo.org/id/iso639-3/ibo", "Igbo", "ig", "ibo",
-		"http://lexvo.org/id/iso639-3/ido", "Ido", "io", "ido",
-		"http://lexvo.org/id/iso639-3/iii", "Sichuan Yi", "ii", "iii",
-		"http://lexvo.org/id/iso639-3/iku", "Inuktitut", "iu", "iku",
-		"http://lexvo.org/id/iso639-3/ile", "Interlingue", "ie", "ile",
-		"http://lexvo.org/id/iso639-3/ina", "Interlingua (International Auxiliary Language Association)", "ia", "ina",
-		"http://lexvo.org/id/iso639-3/ind", "Indonesian", "id", "ind",
-		"http://lexvo.org/id/iso639-3/ipk", "Inupiaq", "ik", "ipk",
-		"http://lexvo.org/id/iso639-3/isl", "Icelandic", "is", "isl",
-		"http://lexvo.org/id/iso639-3/ita", "Italian", "it", "ita",
-		"http://lexvo.org/id/iso639-3/jav", "Javanese", "jv", "jav",
-		"http://lexvo.org/id/iso639-3/jpn", "Japanese", "ja", "jpn",
-		"http://lexvo.org/id/iso639-3/kal", "Kalaallisut", "kl", "kal",
-		"http://lexvo.org/id/iso639-3/kan", "Kannada", "kn", "kan",
-		"http://lexvo.org/id/iso639-3/kas", "Kashmiri", "ks", "kas",
-		"http://lexvo.org/id/iso639-3/kat", "Georgian", "ka", "kat",
-		"http://lexvo.org/id/iso639-3/kau", "Kanuri", "kr", "kau",
-		"http://lexvo.org/id/iso639-3/kaz", "Kazakh", "kk", "kaz",
-		"http://lexvo.org/id/iso639-3/khm", "Central Khmer", "km", "khm",
-		"http://lexvo.org/id/iso639-3/kik", "Kikuyu", "ki", "kik",
-		"http://lexvo.org/id/iso639-3/kin", "Kinyarwanda", "rw", "kin",
-		"http://lexvo.org/id/iso639-3/kir", "Kirghiz", "ky", "kir",
-		"http://lexvo.org/id/iso639-3/kom", "Komi", "kv", "kom",
-		"http://lexvo.org/id/iso639-3/kon", "Kongo", "kg", "kon",
-		"http://lexvo.org/id/iso639-3/kor", "Korean", "ko", "kor",
-		"http://lexvo.org/id/iso639-3/kua", "Kuanyama", "kj", "kua",
-		"http://lexvo.org/id/iso639-3/kur", "Kurdish", "ku", "kur",
-		"http://lexvo.org/id/iso639-3/lao", "Lao", "lo", "lao",
-		"http://lexvo.org/id/iso639-3/lat", "Latin", "la", "lat",
-		"http://lexvo.org/id/iso639-3/lav", "Latvian", "lv", "lav",
-		"http://lexvo.org/id/iso639-3/lim", "Limburgan", "li", "lim",
-		"http://lexvo.org/id/iso639-3/lin", "Lingala", "ln", "lin",
-		"http://lexvo.org/id/iso639-3/lit", "Lithuanian", "lt", "lit",
-		"http://lexvo.org/id/iso639-3/ltz", "Luxembourgish", "lb", "ltz",
-		"http://lexvo.org/id/iso639-3/lub", "Luba-Katanga", "lu", "lub",
-		"http://lexvo.org/id/iso639-3/lug", "Ganda", "lg", "lug",
-		"http://lexvo.org/id/iso639-3/mah", "Marshallese", "mh", "mah",
-		"http://lexvo.org/id/iso639-3/mal", "Malayalam", "ml", "mal",
-		"http://lexvo.org/id/iso639-3/mar", "Marathi", "mr", "mar",
-		"http://lexvo.org/id/iso639-3/mkd", "Macedonian", "mk", "mkd",
-		"http://lexvo.org/id/iso639-3/mlg", "Malagasy", "mg", "mlg",
-		"http://lexvo.org/id/iso639-3/mlt", "Maltese", "mt", "mlt",
-		"http://lexvo.org/id/iso639-3/mon", "Mongolian", "mn", "mon",
-		"http://lexvo.org/id/iso639-3/mri", "Maori", "mi", "mri",
-		"http://lexvo.org/id/iso639-3/msa", "Malay (macrolanguage)", "ms", "msa",
-		"http://lexvo.org/id/iso639-3/mya", "Burmese", "my", "mya",
-		"http://lexvo.org/id/iso639-3/nau", "Nauru", "na", "nau",
-		"http://lexvo.org/id/iso639-3/nav", "Navajo", "nv", "nav",
-		"http://lexvo.org/id/iso639-3/nbl", "South Ndebele", "nr", "nbl",
-		"http://lexvo.org/id/iso639-3/nde", "North Ndebele", "nd", "nde",
-		"http://lexvo.org/id/iso639-3/ndo", "Ndonga", "ng", "ndo",
-		"http://lexvo.org/id/iso639-3/nep", "Nepali (macrolanguage)", "ne", "nep",
-		"http://lexvo.org/id/iso639-3/nld", "Dutch", "nl", "nld",
-		"http://lexvo.org/id/iso639-3/nno", "Norwegian Nynorsk", "nn", "nno",
-		"http://lexvo.org/id/iso639-3/nob", "Norwegian Bokmål", "nb", "nob",
-		"http://lexvo.org/id/iso639-3/nor", "Norwegian", "no", "nor",
-		"http://lexvo.org/id/iso639-3/nya", "Nyanja", "ny", "nya",
-		"http://lexvo.org/id/iso639-3/oci", "Occitan (post 1500)", "oc", "oci",
-		"http://lexvo.org/id/iso639-3/oji", "Ojibwa", "oj", "oji",
-		"http://lexvo.org/id/iso639-3/ori", "Oriya (macrolanguage)", "or", "ori",
-		"http://lexvo.org/id/iso639-3/orm", "Oromo", "om", "orm",
-		"http://lexvo.org/id/iso639-3/oss", "Ossetian", "os", "oss",
-		"http://lexvo.org/id/iso639-3/pan", "Panjabi", "pa", "pan",
-		"http://lexvo.org/id/iso639-3/pli", "Pali", "pi", "pli",
-		"http://lexvo.org/id/iso639-3/pol", "Polish", "pl", "pol",
-		"http://lexvo.org/id/iso639-3/por", "Portuguese", "pt", "por",
-		"http://lexvo.org/id/iso639-3/pus", "Pushto", "ps", "pus",
-		"http://lexvo.org/id/iso639-3/que", "Quechua", "qu", "que",
-		"http://lexvo.org/id/iso639-3/roh", "Romansh", "rm", "roh",
-		"http://lexvo.org/id/iso639-3/ron", "Romanian", "ro", "ron",
-		"http://lexvo.org/id/iso639-3/run", "Rundi", "rn", "run",
-		"http://lexvo.org/id/iso639-3/rus", "Russian", "ru", "rus",
-		"http://lexvo.org/id/iso639-3/sag", "Sango", "sg", "sag",
-		"http://lexvo.org/id/iso639-3/san", "Sanskrit", "sa", "san",
-		"http://lexvo.org/id/iso639-3/sin", "Sinhala", "si", "sin",
-		"http://lexvo.org/id/iso639-3/slk", "Slovak", "sk", "slk",
-		"http://lexvo.org/id/iso639-3/slv", "Slovenian", "sl", "slv",
-		"http://lexvo.org/id/iso639-3/sme", "Northern Sami", "se", "sme",
-		"http://lexvo.org/id/iso639-3/smo", "Samoan", "sm", "smo",
-		"http://lexvo.org/id/iso639-3/sna", "Shona", "sn", "sna",
-		"http://lexvo.org/id/iso639-3/snd", "Sindhi", "sd", "snd",
-		"http://lexvo.org/id/iso639-3/som", "Somali", "so", "som",
-		"http://lexvo.org/id/iso639-3/sot", "Southern Sotho", "st", "sot",
-		"http://lexvo.org/id/iso639-3/spa", "Spanish", "es", "spa",
-		"http://lexvo.org/id/iso639-3/sqi", "Albanian", "sq", "sqi",
-		"http://lexvo.org/id/iso639-3/srd", "Sardinian", "sc", "srd",
-		"http://lexvo.org/id/iso639-3/srp", "Serbian", "sr", "srp",
-		"http://lexvo.org/id/iso639-3/ssw", "Swati", "ss", "ssw",
-		"http://lexvo.org/id/iso639-3/sun", "Sundanese", "su", "sun",
-		"http://lexvo.org/id/iso639-3/swa", "Swahili (macrolanguage)", "sw", "swa",
-		"http://lexvo.org/id/iso639-3/swe", "Swedish", "sv", "swe",
-		"http://lexvo.org/id/iso639-3/tah", "Tahitian", "ty", "tah",
-		"http://lexvo.org/id/iso639-3/tam", "Tamil", "ta", "tam",
-		"http://lexvo.org/id/iso639-3/tat", "Tatar", "tt", "tat",
-		"http://lexvo.org/id/iso639-3/tel", "Telugu", "te", "tel",
-		"http://lexvo.org/id/iso639-3/tgk", "Tajik", "tg", "tgk",
-		"http://lexvo.org/id/iso639-3/tgl", "Tagalog", "tl", "tgl",
-		"http://lexvo.org/id/iso639-3/tha", "Thai", "th", "tha",
-		"http://lexvo.org/id/iso639-3/tir", "Tigrinya", "ti", "tir",
-		"http://lexvo.org/id/iso639-3/ton", "Tonga (Tonga Islands)", "to", "ton",
-		"http://lexvo.org/id/iso639-3/tsn", "Tswana", "tn", "tsn",
-		"http://lexvo.org/id/iso639-3/tso", "Tsonga", "ts", "tso",
-		"http://lexvo.org/id/iso639-3/tuk", "Turkmen", "tk", "tuk",
-		"http://lexvo.org/id/iso639-3/tur", "Turkish", "tr", "tur",
-		"http://lexvo.org/id/iso639-3/twi", "Twi", "tw", "twi",
-		"http://lexvo.org/id/iso639-3/uig", "Uighur", "ug", "uig",
-		"http://lexvo.org/id/iso639-3/ukr", "Ukrainian", "uk", "ukr",
-		"http://lexvo.org/id/iso639-3/urd", "Urdu", "ur", "urd",
-		"http://lexvo.org/id/iso639-3/uzb", "Uzbek", "uz", "uzb",
-		"http://lexvo.org/id/iso639-3/ven", "Venda", "ve", "ven",
-		"http://lexvo.org/id/iso639-3/vie", "Vietnamese", "vi", "vie",
-		"http://lexvo.org/id/iso639-3/vol", "Volapük", "vo", "vol",
-		"http://lexvo.org/id/iso639-3/wln", "Walloon", "wa", "wln",
-		"http://lexvo.org/id/iso639-3/wol", "Wolof", "wo", "wol",
-		"http://lexvo.org/id/iso639-3/xho", "Xhosa", "xh", "xho",
-		"http://lexvo.org/id/iso639-3/yid", "Yiddish", "yi", "yid",
-		"http://lexvo.org/id/iso639-3/yor", "Yoruba", "yo", "yor",
-		"http://lexvo.org/id/iso639-3/zha", "Zhuang", "za", "zha",
-		"http://lexvo.org/id/iso639-3/zho", "Chinese", "zh", "zho",
-		"http://lexvo.org/id/iso639-3/zul", "Zulu", "zu", "zul"
-	)
-	return $zw
-};
-
-
-declare function re3mappings:get-language-index ( $alpha3 as xs:string )  {
-	let $langMap := re3mappings:get-language-map()
-
-	(: re3data special alpha3 strings: EEC, AAA :)
-	let $alpha3 := fn:replace(fn:replace((fn:lower-case($alpha3)),'\s+$',''),'^\s+','')
-
-	let $ind := fn:index-of($langMap, $alpha3)
-
-	let $zw := if($ind < 3) then
-		fn:error(QName("", $alpha3), "639-1 alpha-3 language code is unknown:", "") else()
-	return $ind
 };
 
 declare function re3mappings:get-language ( $alpha3 as xs:string )  {
-	let $langMap := re3mappings:get-language-map()
-	let $ind := re3mappings:get-language-index ( $alpha3 )
-	let $zw := ($langMap[$ind -3], $langMap[$ind -2], $langMap[$ind -1], $langMap[$ind])
+	let $alpha3 := fn:replace(fn:replace((fn:lower-case($alpha3)),'\s+$',''),'^\s+','')
+	let $query := fn:encode-for-uri(fn:concat("
+PREFIX lvont: <http://lexvo.org/ontology#>
+SELECT *
+FROM <http://lexvo.org/id>
+WHERE{
+?lang a lvont:Language.
+?lang skos:prefLabel ?label.
+?lang lvont:iso639P3PCode ?p3.
+OPTIONAL{?lang lvont:iso639P1Code ?p1.}
+FILTER(str(?p3) = '", $alpha3, "')
+}"))
+	let $url := fn:concat("http://localhost:8890/sparql?format=json&amp;query=", $query)
+	let $ele := sparql:json-doc($url)//results/bindings[1]/arrayElement
+	let $zw := ($ele/lang/value/text(), $ele/label/value/text(), $ele/p1/value/text(), $ele/p3/value/text())
 	return $zw
 };
 
-declare function re3mappings:get-alpha2 ( $alpha3 as xs:string )  {
-	let $ind := re3mappings:get-language-index ( $alpha3 )
-	return re3mappings:get-language-map ()[$ind -1]
+declare function re3mappings:get-iso639P1 ( $alpha3 as xs:string )  {
+	let $alpha3 := fn:replace(fn:replace((fn:lower-case($alpha3)),'\s+$',''),'^\s+','')
+	let $query := fn:encode-for-uri(fn:concat("
+PREFIX lvont: <http://lexvo.org/ontology#>
+SELECT ?p1
+FROM <http://lexvo.org/id>
+WHERE{
+?lang a lvont:Language.
+?lang lvont:iso639P3PCode ?p3.
+?lang lvont:iso639P1Code ?p1.
+FILTER(str(?p3) = '", $alpha3, "')
+}"))
+	let $url := fn:concat("http://localhost:8890/sparql?format=json&amp;query=", $query)
+	let $ele := sparql:json-doc($url)//results/bindings[1]/arrayElement
+	return $ele/p1/value/text()
+};
+
+declare function re3mappings:get-parse-type ($type as xs:string) {
+	let $parse := (
+		"StandardOfficeDocuments", "standard office documents",
+		"NetworkbasedData", "networkbased data",
+		"Databases", "databases",
+		"Images", "images",
+		"AudiovisualData", "audiovisual data",
+		"StructuredGraphics", "structured graphics",
+		"ScientificStatisticalData", "scientific and statistical data formats",
+		"RawData", "raw data",
+		"PlainText", "plain text",
+		"StructuredText", "structured text",
+		"ArchivedData", "archived data",
+		"SoftwareApplications", "software applications",
+		"SourceCode", "source code",
+		"ConfigurationData", "configuration data",
+		"OtherData", "other"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace((fn:lower-case($type)),'\s+$',''),'^\s+',''))
+	return re3mappings:resolve-prefixed-uri(fn:concat("r3parse:", $parse[$ind -1]))
+};
+
+declare function re3mappings:get-responsibility-type ($type as xs:string) {
+	let $parse := (
+		"Funding", "funding",
+		"General", "general",
+		"Main", "main",
+		"Sponsoring", "sponsoring",
+		"Technical", "technical",
+		"Commercial", "commercial",
+		"NonProfit", "non-profit"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace((fn:lower-case($type)),'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3respt:", $parse[$ind -1])) else ()
+};
+
+declare function re3mappings:get-institution-type ($type as xs:string) {
+	let $parse := (
+		"Commercial", "commercial",
+		"NonProfit", "non-profit"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3instt:", $parse[$ind -1])) else ()
+};
+
+declare function re3mappings:get-policy-type ($type as xs:string) {
+	let $parse := (
+		"AccessPolicy", "Access policy",
+		"CollectionPolicy", "Collection policy",
+		"DataPolicy", "Data policy",
+		"MetadataPolicy", "Metadata policy",
+		"PreservationPolicy", "Preservation policy",
+		"SubmissionPolicy", "Submission policy",
+		"TermsOfUse", "Terms of use",
+		"UsagePolicy", "Usage policy",
+		"QualityPolicy", "Quality policy"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	return re3mappings:resolve-prefixed-uri(fn:concat("r3instt:", $parse[$ind -1]))
+};
+
+declare function re3mappings:get-access-type ($type as xs:string) {
+	let $parse := (
+		"Open", "open",
+		"Embargoed", "embargoed",
+		"Restricted", "restricted",
+		"Closed", "closed"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3accty:", $parse[$ind -1])) else ()
+};
+
+declare function re3mappings:get-access-restriction ($type as xs:string) {
+	let $parse := (
+		"FeeRequired", "feeRequired", 
+		"InstitutionalMembership", "institutional membership",
+		"Registration", "registration",
+		"Other", "other"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3accre:", $parse[$ind -1])) else ()
+};
+
+declare function re3mappings:get-api-type ($type as xs:string) {
+	let $parse := (
+		"Ftp", "FTP",
+		"NetCdf", "NetCDF",
+		"OaiPmh", "OAI-PMH",
+		"OpenDap", "OpenDAP",
+		"Rest", "REST",
+		"Soap", "SOAP",
+		"Sparql", "SPARQL",
+		"Sword", "SWORD",
+		"Other", "other"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3apity:", $parse[$ind -1])) else ()
+};
+
+declare function re3mappings:get-citation-reference ($type as xs:string) {
+	let $parse := (
+		"DataCitationIndex", "Data Citation Index",
+		"Scopus", "SCOPUS"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	return re3mappings:resolve-prefixed-uri(fn:concat("r3ciref:", $parse[$ind -1]))
+};
+
+declare function re3mappings:get-aid-system ($type as xs:string) {
+	let $parse := (
+		"ResearcherId", "ResearcherID",
+		"Naco", "NACO",
+		"Viaf", "VIAF",
+		"Isni", "ISNI",
+		"Orcid","ORCID",
+		"Scopus", "Scopus",
+		"CrossRef", "CrossRef",
+		"Nis", "NIS",
+		"Lattes", "Lattes"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3aidsys:", $parse[$ind -1])) else ()
+};
+
+declare function re3mappings:get-pid-system ($type as xs:string) {
+	let $parse := (
+		"Ark", "ARK",
+		"Doi", "DOI",
+		"Handle", "Handle",
+		"InfoUri", "INFO URI",
+		"Istc", "ISTC",
+		"IssnIsbn", "ISSN/ISBN",
+		"Purl", "PURL",
+		"OpenUrl", "OpenURL",
+		"Uri", "URI",
+		"Url", "URL",
+		"Urn", "URN",
+		"Uuid", "UUID",
+		"Clarin", "CLARIN",
+		"Dans", "DANS",
+		"DataCite", "DATACITE",
+		"PersId", "PersID",
+		"Plin", "PLIN",
+		"Ridir", "RIDIR",
+		"Driver", "DRIVER",
+		"KnowledgeExchangeId", "KnowledgeExchangeID"
+	)
+	let $ind := fn:index-of($parse, fn:replace(fn:replace($type,'\s+$',''),'^\s+',''))
+	let $ind := if($ind instance of xs:integer) then $ind else if(fn:count($ind) > 1) then $ind[2] else -1
+	return if($ind > 1) then re3mappings:resolve-prefixed-uri(fn:concat("r3pidsys:", $parse[$ind -1])) else ()
+};
+
+(: makeshift function, replace! :)
+declare function re3mappings:get-dfg-subject ($name as xs:string) {
+	let $parts := fn:tokenize($name, "\s")
+	let $zw := for $p in $parts
+		return re3mappings:capitalize-first($p)
+	return fn:concat("r3dfg:", fn:string-join($zw, ""))
 };

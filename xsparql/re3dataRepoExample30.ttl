@@ -1,0 +1,233 @@
+@prefix r3respt: <http://www.re3data.org/vocab/respt#> .
+@prefix r3d:   <http://www.re3data.org/schema/3-0/> .
+@prefix lvont: <http://lexvo.org/ontology#> .
+@prefix r3instt: <http://www.re3data.org/vocab/instt#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix r3parse: <http://www.re3data.org/vocab/parse#> .
+@prefix r3dfunc: <http://www.re3data.org/functions/> .
+@prefix r3dfg: <http://www.re3data.org/vocab/dfg#> .
+@prefix sparql: <http://xsparql.deri.org/demo/xquery/sparql-functions.xquery> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://service.re3data.org/repository/r3d100000001>
+        a                         r3d:Repository ;
+        rdfs:comment              "This is additional information on the research data repository visible to all users."@en ;
+        rdfs:label                "Global Research Data Repository"@en ;
+        dc:alternative            "GReDaR"@en , "Globales Forschungsdatenrepositorium"@de ;
+        dc:description            "The Global Research Data Repository (GReDaR) is the place where esearchers from all academic disciplines can put their research data. Research data deposited in GReDaR"@en ;
+        dc:subject                "Maps" , "Measure Data" , "Social Science" , "Earth Science" ;
+        dc:title                  "Global Research Data Repository"@en ;
+        r3d:api                   <http://service.re3data.org/repository/r3d100000001#api=1> , <http://service.re3data.org/repository/r3d100000001#api=2> ;
+        r3d:certificate           <http://service.re3data.org/repository/r3d100000001#refdoc=51> , <http://service.re3data.org/repository/r3d100000001#refdoc=50> ;
+        r3d:closed                "2013-07-31"^^xsd:date ;
+        r3d:contentType           r3parse:Images , r3parse:StructuredText ;
+        r3d:dataAccess            <http://service.re3data.org/repository/r3d100000001#regulation=32> , <http://service.re3data.org/repository/r3d100000001#regulation=33> , <http://service.re3data.org/repository/r3d100000001#regulation=34> ;
+        r3d:dataLicense           <http://service.re3data.org/repository/r3d100000001#regulation=36> , <http://service.re3data.org/repository/r3d100000001#regulation=35> ;
+        r3d:dataUpload            <http://service.re3data.org/repository/r3d100000001#regulation=37> ;
+        r3d:dataUploadLicense     <http://service.re3data.org/repository/r3d100000001#regulation=38> ;
+        r3d:databaseAccess        <http://service.re3data.org/repository/r3d100000001#regulation=29> ;
+        r3d:databaseLicense       <http://service.re3data.org/repository/r3d100000001#regulation=30> , <http://service.re3data.org/repository/r3d100000001#regulation=31> ;
+        r3d:doi                   <http://service.re3data.org/repository/r3d100000001#identifier=doi> ;
+        r3d:entryDate             "2012-11-15"^^xsd:date ;
+        r3d:institution           <http://service.re3data.org/institution/Institute%20for%20Research%20Data> ;
+        r3d:institutionCountry    <http://lexvo.org/id/iso3166/DE> ;
+        r3d:lastUpdate            "2012-12-21"^^xsd:date ;
+        r3d:metadataStandard      <http://service.re3data.org/repository/r3d100000001#refdoc=52> ;
+        r3d:metrics               "Altmetric" ;
+        r3d:missionStatementUrl   <http://www.globalresearchdatarepository.org/mission_statement> ;
+        r3d:offline               "2014-11-26"^^xsd:date ;
+        r3d:policy                <http://service.re3data.org/repository/r3d100000001#regulation=28> ;
+        r3d:publicationSupport    <http://service.re3data.org/repository/r3d100000001#publicationSupport> ;
+        r3d:qualityManagement     true ;
+        r3d:repositoryContact     <http://service.re3data.org/repository/r3d100000001#post=1> ;
+        r3d:repositoryIdentifier  <http://service.re3data.org/repository/r3d100000001#identifier=doi> ;
+        r3d:repositoryLanguage    <http://lexvo.org/id/iso639-3/eng> , <http://lexvo.org/id/iso639-3/fra> , <http://lexvo.org/id/iso639-3/deu> ;
+        r3d:software              "EPrints" ;
+        r3d:startDate             "2011-01-01"^^xsd:date ;
+        r3d:subject               r3dfg:Oceanography , r3dfg:CellBiology , r3dfg:SocialSciences ;
+        r3d:syndication           <http://service.re3data.org/repository/r3d100000001#refdoc=53> ;
+        r3d:uri                   <http://service.re3data.org/repository/r3d100000001#identifier=uri> ;
+        r3d:versioning            true ;
+        foaf:landingpage          <http://www.globalresearchdatarepository.org> .
+
+<http://service.re3data.org/repository/r3d100000001#refdoc=51>
+        a               r3d:ReferenceDocument ;
+        dc:description  "The certificate, seal or standard the repository complies with."@en ;
+        dc:title        "ISO 16919"@en .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=29>
+        a                      r3d:Access ;
+        r3d:accessRestriction  <http://www.re3data.org/vocab/accre#Registration> ;
+        r3d:accessType         <http://www.re3data.org/vocab/accty#Restricted> .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=38>
+        a              r3d:License ;
+        dc:references  <http://www.globalresearchdatarepository.org/deposit_license/> ;
+        dc:title       "GReDaR Data Deposit License" .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=32>
+        a               r3d:Access ;
+        r3d:accessType  <http://www.re3data.org/vocab/accty#Embargoed> .
+
+<http://service.re3data.org/institution/Institute%20for%20Research%20Data>
+        a                          r3d:Institution ;
+        dc:alternative             "Institut für Forschungsdaten"@de , "IRD"@en ;
+        dc:title                   "Institute for Research Data"@en ;
+        r3d:institutionContact     <http://service.re3data.org/institution/Institute%20for%20Research%20Data#post=2> ;
+        r3d:institutionIdentifier  <http://service.re3data.org/institution/Institute%20for%20Research%20Data#identifier=urn> ;
+        r3d:institutionType        r3instt:NonProfit ;
+        r3d:responsibility         <http://service.re3data.org/institution/Institute%20for%20Research%20Data#responsibility> ;
+        foaf:homepage              <http://www.ird.org> .
+
+<http://service.re3data.org/repository/r3d100000001#refdoc=50>
+        a               r3d:ReferenceDocument ;
+        dc:description  "The certificate, seal or standard the repository complies with."@en ;
+        dc:title        "Data Seal of Approval (DSA)"@en .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=28>
+        a               r3d:Policy ;
+        dc:references   <http://www.globalresearchdatarepository.org/policy.html> ;
+        dc:title        "Data Management Policy" ;
+        r3d:policyType  r3instt:DataPolicy .
+
+<http://service.re3data.org/institution/Institute%20for%20Research%20Data#responsibility>
+        a                            r3d:Responsibility ;
+        r3d:responsibilityEndDate    "2014-07-31"^^xsd:date ;
+        r3d:responsibilityStartDate  "2011-01-01"^^xsd:date ;
+        r3d:responsibilityType       r3respt:Technical , r3respt:General .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=31>
+        a              r3d:License ;
+        dc:references  <http://example.org/dataLicense> ;
+        dc:title       "other" .
+
+<http://lexvo.org/id/iso639-3/eng>
+        a                    lvont:Language ;
+        lvont:iso639P1Code   "en" ;
+        lvont:iso639P3PCode  "eng" ;
+        dc:title             "English"@en ;
+        skos:prefLabel       "English"@en .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=37>
+        a       r3d:Access .
+
+<http://lexvo.org/id/iso3166/DE>
+        a               lvont:GeographicRegion ;
+        lvont:code-a2   "DE" ;
+        lvont:code-a3   "DEU" ;
+        dc:title        "Germany"@en ;
+        skos:prefLabel  "Germany"@en .
+
+<http://service.re3data.org/institution/Institute%20for%20Research%20Data#agent=2>
+        a              foaf:Agent ;
+        dc:source      "John Doe, Institut für Forschungsdaten, Unter den Linden 6, 10099 Berlin, Germany; johndoe@globalresearchdatarepository.org; http://www.globalresearchdatarepository.org/contactform/" ;
+        foaf:homepage  <http://www.globalresearchdatarepository.org/contactform/> ;
+        foaf:mbox      "johndoe@globalresearchdatarepository.org" .
+
+<http://service.re3data.org/repository/r3d100000001#agent=1>
+        a          foaf:Agent ;
+        dc:source  "info@greadar.org" ;
+        foaf:mbox  "info@greadar.org" .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=30>
+        a              r3d:License ;
+        dc:references  <http://creativecommons.org/publicdomain/zero/1.0/> ;
+        dc:title       "CC0" .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=36>
+        a              r3d:License ;
+        dc:references  <http://www.globalresearchdatarepository.org/copyrights/dataset1234> ;
+        dc:title       "Copyrights" .
+
+<http://service.re3data.org/repository/r3d100000001#publicationSupport>
+        a                         r3d:PublicationSupport ;
+        r3d:aidSystem             <http://www.re3data.org/vocab/aidsys#Lattes> ;
+        r3d:citationGuidelineUrl  <http://www.globalresearchdatarepository.org/how-to-cite.html> ;
+        r3d:citationReference     <http://www.re3data.org/vocab/ciref#Scopus> ;
+        r3d:enhancedPublication   true ;
+        r3d:pidSystem             <http://www.re3data.org/vocab/pidsys#Doi> .
+
+<http://service.re3data.org/institution/Institute%20for%20Research%20Data#identifier=urn>
+        a                              datacite:ResourceIdentifier ;
+        datacite:usesIdentifierScheme  datacite:urn ;
+        litre:hasLiteralValue          "urn:47110815/ird" .
+
+<http://service.re3data.org/repository/r3d100000001#identifier=doi>
+        a                              datacite:ResourceIdentifier ;
+        dc:references                  <http://doi.org/10.17616/R34S33> , <http://doi.org/0123456789/gredar> ;
+        datacite:usesIdentifierScheme  datacite:doi ;
+        litre:hasLiteralValue          "http://doi.org/10.17616/R34S33" , "http://doi.org/0123456789/gredar" .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=35>
+        a              r3d:License ;
+        dc:references  <http://creativecommons.org/licenses/by/4.0/> ;
+        dc:title       "Creative Commons Attribution 4.0 International" .
+
+<http://service.re3data.org/repository/r3d100000001#post=1>
+        org:heldBy  <http://service.re3data.org/repository/r3d100000001#agent=1> ;
+        org:role    r3d:ContactRole .
+
+<http://service.re3data.org/repository/r3d100000001#api=2>
+        a                     r3d:Api ;
+        r3d:apiDocumentation  <http://www.globalresearchdatarepository.org/rest/documentation> ;
+        r3d:apiType           <http://www.re3data.org/vocab/apity#Rest> ;
+        r3d:apiUrl            <http://www.globalresearchdatarepository.org/rest> .
+
+<http://service.re3data.org/repository/r3d100000001#refdoc=53>
+        a               r3d:ReferenceDocument ;
+        dc:description  "The alerting service the repository offers"@en ;
+        dc:referencs    <http://www.globalresearchdatarepository.org/news.rss> ;
+        dc:title        "RSS"@en .
+
+<http://lexvo.org/id/iso639-3/fra>
+        a                    lvont:Language ;
+        lvont:iso639P1Code   "fr" ;
+        lvont:iso639P3PCode  "fra" ;
+        dc:title             "French"@en ;
+        skos:prefLabel       "French"@en .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=34>
+        a               r3d:Access ;
+        r3d:accessType  <http://www.re3data.org/vocab/accty#Closed> .
+
+<http://service.re3data.org/repository/r3d100000001#api=1>
+        a                     r3d:Api ;
+        r3d:apiDocumentation  <http://www.globalresearchdatarepository.org/oai/documentation> ;
+        r3d:apiType           <http://www.re3data.org/vocab/apity#OaiPmh> ;
+        r3d:apiUrl            <http://globalresearchdatarepository.org/oai> .
+
+<http://service.re3data.org/repository/r3d100000001#refdoc=52>
+        a               r3d:ReferenceDocument ;
+        dc:description  "The metadata standard the repository complies with."@en ;
+        dc:referencs    <http://www.dcc.ac.uk/resources/metadata-standards/datacite-metadata-schema> ;
+        dc:title        "DataCite Metadata Schema"@en .
+
+<http://service.re3data.org/repository/r3d100000001#identifier=uri>
+        a                              datacite:ResourceIdentifier ;
+        dc:references                  <http://service.re3data.org/repository/r3d100000001> ;
+        datacite:usesIdentifierScheme  datacite:uri ;
+        litre:hasLiteralValue          "r3d100000001" .
+
+<http://service.re3data.org/institution/Institute%20for%20Research%20Data#post=2>
+        org:heldBy  <http://service.re3data.org/institution/Institute%20for%20Research%20Data#agent=2> ;
+        org:role    r3d:ContactRole .
+
+<http://service.re3data.org/repository/r3d100000001#regulation=33>
+        a                      r3d:Access ;
+        r3d:accessRestriction  <http://www.re3data.org/vocab/accre#Registration> ;
+        r3d:accessType         <http://www.re3data.org/vocab/accty#Restricted> .
+
+<http://lexvo.org/id/iso639-3/deu>
+        a                    lvont:Language ;
+        lvont:iso639P1Code   "de" ;
+        lvont:iso639P3PCode  "deu" ;
+        dc:title             "German"@en ;
+        skos:prefLabel       "German"@en .

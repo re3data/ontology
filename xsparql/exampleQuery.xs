@@ -2,6 +2,7 @@ import module namespace re3mappings = "http://www.re3data.org/xsparql/r3dmapping
 
 declare namespace r3d="http://www.re3data.org/schema/3-0/";
 declare namespace r3dfunc="http://www.re3data.org/functions/";
+declare namespace r3parse="http://www.re3data.org/vocab/parse#";
 declare namespace lvont="http://lexvo.org/ontology#";
 declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare namespace rdfs="http://www.w3.org/2000/01/rdf-schema#";
@@ -45,11 +46,25 @@ declare function r3dfunc:insert-lexvo-language ( $alpha3 as xs:string, $uri as x
 	construct {
 		$uri 	r3d:repositoryLanguage	$urii .		
 		$urii 	a  					lvont:Language ;
+				dc:title			{sparql:createLiteral($lang[2], "en", "")} ;
 				skos:prefLabel  	{sparql:createLiteral($lang[2], "en", "")} ;
-				lvont:code-a2		{sparql:createLiteral($lang[3], "", "")} ;
-				lvont:code-a3		{sparql:createLiteral($lang[4], "", "")} .
+				lvont:iso639P1Code	{sparql:createLiteral($lang[3], "", "")} ;
+				lvont:iso639P3PCode	{sparql:createLiteral($lang[4], "", "")} .
 	}	
 	
+};
+
+declare function r3dfunc:insert-lexvo-region ( $alpha3 as xs:string, $uri as xs:string ) {
+	let $country := re3mappings:get-country ( $alpha3 )
+	let $reg := sparql:createURI($country[1])
+	construct {
+		$uri 	r3d:institutionCountry 		$reg	 .
+		$reg 	a  					lvont:GeographicRegion ;
+				dc:title	 		{sparql:createLiteral($country[2], "en", "")} ;
+				skos:prefLabel 		{sparql:createLiteral($country[2], "en", "")} ;
+				lvont:code-a2		{sparql:createLiteral($country[3], "", "")} ;
+				lvont:code-a3		{sparql:createLiteral($country[4], "", "")} .
+	}	
 };
 
 declare function r3dfunc:insert-reference-doc ( $uri as xs:string, $refDocCount as xs:integer, $prop as xs:string, $title as xs:string, $descr as xs:string, $updated as xs:string, $ref as xs:string ) {
@@ -71,6 +86,33 @@ declare function r3dfunc:insert-reference-doc ( $uri as xs:string, $refDocCount 
 	}	
 };
 
+declare function r3dfunc:insert-content-type ( $type as xs:string, $uri as xs:string ) {
+	let $urii := re3mappings:get-parse-type ( $type )
+	construct {
+		$uri 	r3d:contentType		r3parse:{$urii} .		
+	}	
+};
+
+declare function r3dfunc:insert-institution ( $institution as node(), $uri as xs:string ) {
+
+	(:  TODO: no Institution identifier! have to come up with a way to uniquely identify... :)
+	let $urii := sparql:createURI(fn:concat("http://service.re3data.org/institution/", fn:encode-for-uri($institution/r3d:institutionName/text())))
+	let $name := sparql:createLiteral($institution/r3d:institutionName/text(), re3mappings:get-alpha2(data($institution/r3d:institutionName/@language)), "")
+	(: get all additional names :)
+	let $additionalInstNames := for $name in $institution/r3d:institutionAdditionalName
+		construct{	$urii   dc:alternative  { sparql:createLiteral($name/text(), re3mappings:get-alpha2(data($name/@language)), "")} . }
+	let $country := r3dfunc:insert-lexvo-region ($institution/r3d:institutionCountry/text(), $uri)
+	let $urls := for $u in $institution/r3d:institutionUrl[1]
+		construct{ $urii foaf:homepage	{sparql:createURI($u/text())} . }
+	construct {
+		$uri 	r3d:institution		$urii .		
+		$urii	a 	r3d:Institution ;
+				dc:title {$name}	.
+
+		{fn:distinct-values(
+		(	$additionalInstNames, $country, $urls	))}
+	}	
+};
 
 let $refDocCount := 0
 (: get root element :)
@@ -115,6 +157,12 @@ let $size := for $s in $repo/r3d:size
 (: gather keywords :)
 let $keywords := for $kw in $repo/r3d:keyword
 	construct{ $uri 	dc:subject 	{sparql:createLiteral($kw/text(), "", "")} . }
+(: get content types (only parse yet!) :)
+let $contentTypes := for $ct in $repo/r3d:contentType
+	return r3dfunc:insert-content-type($ct/text(), $uri)
+(: get institution! :)
+let $institution := for $i in $repo/r3d:institution
+	return r3dfunc:insert-institution ($i, $uri)
 construct{	
 	$uri 				a 								r3d:Repository ;
 						dc:title						{$title} ;
@@ -129,6 +177,6 @@ construct{
 						rdfs:comment					{$remarks} .
 	
 	{fn:distinct-values(
-	(	$additionalNames, $repoIds, $doi, $r3id, $repoLangs, $size, $keywords	)
+	(	$additionalNames, $repoIds, $doi, $r3id, $repoLangs, $size, $keywords, $contentTypes, $institution)
 	)}				
 }

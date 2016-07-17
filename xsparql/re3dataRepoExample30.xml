@@ -125,7 +125,7 @@
 		<r3d:citationReference>SCOPUS</r3d:citationReference> <!-- optional --> <!-- multiple -->
 		<r3d:metrics>Altmetric</r3d:metrics> <!-- optional --> <!-- multiple -->
 		<r3d:citationGuidelineUrl>http://www.globalresearchdatarepository.org/how-to-cite.html</r3d:citationGuidelineUrl> <!--optional-->
-		<r3d:aidSystem>ORCID</r3d:aidSystem> <!-- multiple --> <!-- optional -->
+		<r3d:aidSystem>Lattes</r3d:aidSystem> <!-- multiple --> <!-- optional -->
 		<r3d:enhancedPublication>yes</r3d:enhancedPublication>
 		<r3d:qualityManagement>yes</r3d:qualityManagement>
 		<r3d:certificate>Data Seal of Approval (DSA)</r3d:certificate> <!-- optional --> <!-- multiple -->

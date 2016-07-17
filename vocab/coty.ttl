@@ -1,0 +1,194 @@
+############## Preamble ###################				TODO!
+### re3data.org controlled vocabularies ###
+### ...
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix r3d: <http://www.re3data.org/schema/3-0#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix r3coty: <http://www.re3data.org/vocab/coty#> .						#TODO define uri for vocabs
+@prefix r3common: <http://www.re3data.org/vocab/common#> .						#TODO define uri for vocabs
+
+@base	<http://www.re3data.org/vocab/coty#> .
+ 
+<http://www.re3data.org/vocab/coty>
+    a owl:Ontology ;
+    vann:preferredNamespaceUri "http://www.re3data.org/vocab/coty#" ;		#TODO
+    vann:preferredNamespacePrefix "r3coty" ;								#TODO
+    owl:versionInfo "1.0.0" ; 
+    dct:modified "2016-06-12" ;
+    rdfs:comment "TODO"@en ;		#todo
+    rdfs:label "Content Type scheme"@en ;
+	dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;#todo
+	dct:publisher <http://re3data.org> ;
+	owl:import <http://www.re3data.org/vocab/common> .
+
+############# :ContentType ################
+r3coty:ContentType		#TODO need the mappings to the current DFG scheme
+	a			 	r3common:ClassificationScheme	;
+	rdfs:subClassOf r3common:ClassificationIdentifier	;
+	dct:title		"content type vocabulary"@en ;
+	rdfs:label		"content type"@en ;
+	dct:description	"The type of the RDR."@en	;		#TODO copied from schema doc 3.0 
+	dct:modified	"12-07-2016"^^xsd:date	;	
+	dct:publisher	<http://re3data.org>	;
+	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> ;	#TODO
+	skos:prefLabel	"content type"@en ;
+	skos:altLabel	"TODO"@de	;
+	skos:note		"TODO"@en	.
+	
+r3coty:StandardOfficeDocuments 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Standard office documents"@en	;
+	rdfs:comment	"text documents, spreadsheets, presentations"@en	;
+	skos:prefLabel "Standard office documents"@en	;
+	skos:notation	"Standard office documents"	;
+	skos:note	"TODO"@en .
+		
+r3coty:NetworkbasedData 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Networkbased data"@en	;
+	rdfs:comment	"websites, email, chat history, etc"@en	;
+	skos:prefLabel "Networkbased data"@en	;
+	skos:notation	"Networkbased data"	;
+	skos:note	"TODO"@en .
+		
+r3coty:Databases
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Databases"@en	;
+	rdfs:comment	"DBASE, MS Access, Oracle, MySQL, etc."@en	;
+	skos:prefLabel "Databases"@en	;
+	skos:notation	"Databases"	;
+	skos:note	"TODO"@en .
+		
+r3coty:Images
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Images"@en	;
+	rdfs:comment	"JPEG, JPEG2000, GIF, TIF, PNG, SVG, etc."@en	;
+	skos:prefLabel "Images"@en	;
+	skos:notation	"Images"	;
+	skos:note	"TODO"@en .
+		
+r3coty:AudiovisualData 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Audiovisual data "@en	;
+	rdfs:comment	"WAVE, MP3, MP4, Flash, etc"@en	;
+	skos:prefLabel "Audiovisual data "@en	;
+	skos:notation	"Audiovisual data "	;
+	skos:note	"TODO"@en .
+		
+r3coty:StructuredGraphics
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Structured graphics"@en	;
+	rdfs:comment	"CAD, CAM, 3D, VRML, etc."@en	;
+	skos:prefLabel "Structured graphics"@en	;
+	skos:notation	"Structured graphics"	;
+	skos:note	"TODO"@en .
+		
+r3coty:ScientificStatisticalData
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Scientific and statistical data formats"@en	;
+	rdfs:comment	"SPSS, FITS, GIS, etc."@en	;
+	skos:prefLabel "Scientific and statistical data formats"@en	;
+	skos:notation	"Scientific and statistical data formats"	;
+	skos:note	"TODO"@en .
+		
+r3coty:RawData 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Raw data "@en	;
+	rdfs:comment	"device specific output"@en	;
+	skos:prefLabel "Raw data "@en	;
+	skos:notation	"Raw data "	;
+	skos:note	"TODO"@en .
+		
+r3coty:PlainText 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Plain text"@en	;
+	rdfs:comment	"TXT in various encodings"@en	;
+	skos:prefLabel "Plain text"@en	;
+	skos:notation	"Plain text"	;
+	skos:note	"TODO"@en .
+		
+r3coty:StructuredText
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Structured text"@en	;
+	rdfs:comment	"XML, SGML, etc"@en	;
+	skos:prefLabel "Structured text"@en	;
+	skos:notation	"Structured text"	;
+	skos:note	"TODO"@en .
+		
+r3coty:ArchivedData
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Archived data"@en	;
+	rdfs:comment	"ZIP, RAR, JAR, etc."@en	;
+	skos:prefLabel "Archived data"@en	;
+	skos:notation	"Archived data"	;
+	skos:note	"TODO"@en .
+		
+r3coty:SoftwareApplications 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Software applications"@en	;
+	rdfs:comment	"modelling tools, editors, IDE, compilers, etc."@en	;
+	skos:prefLabel "Software applications"@en	;
+	skos:notation	"Software applications"	;
+	skos:note	"TODO"@en .
+		
+r3coty:SourceCode 
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Source code"@en	;
+	rdfs:comment	"scripting, Java, C, C++, Fortran, etc."@en	;
+	skos:prefLabel "Source code"@en	;
+	skos:notation	"Source code"	;
+	skos:note	"TODO"@en .
+		
+r3coty:ConfigurationData
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Configuration data"@en	;
+	rdfs:comment	"parameter settings, logs, library files"@en	;
+	skos:prefLabel "Configuration data"@en	;
+	skos:notation	"Configuration data"	;
+	skos:note	"TODO"@en .
+		
+r3coty:OtherData
+	a	r3coty:ContentType	;
+	skos:inScheme	r3coty:ContentType	;
+	datacite:usesIdentifierScheme r3coty:ContentType	;
+	rdfs:label "Other"@en	;
+	rdfs:comment	"non specified data"@en	;
+	skos:prefLabel "Other"@en	;
+	skos:notation	"Other"	;
+	skos:note	"TODO"@en .

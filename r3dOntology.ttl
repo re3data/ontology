@@ -14,7 +14,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix datacite: <http://purl.org/spar/datacite/> .
-@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
 @prefix r3voc: <http://www.re3data.org/vocab/> .		#TODO: change to specific vocabularies
 @prefix r3common: <http://www.re3data.org/vocab/common#> .
 @prefix r3dfg:	<http://www.re3data.org/vocab/dfg#> .
@@ -51,7 +50,7 @@ r3d:Institution
     
 r3d:Regulation
     a owl:Class ;
-    rdfs:subClassOf dct:RightsStatement, litre:Literal ;
+    rdfs:subClassOf dct:RightsStatement ;
     rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
     rdfs:comment "A super-class for Policy, Access and License classes."@en ;		#TODO
     rdfs:label "Regulation"@en .
@@ -85,6 +84,7 @@ r3d:Api
     
 r3d:ReferenceDocument
     a owl:Class ;
+    rdfs:subClassOf	foaf:Document ;
     rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
     rdfs:comment "A general reference pointer for documents on the web like manuals, copyrights and similar documents."@en ;		#TODO
     rdfs:label "reference document"@en ;
@@ -183,7 +183,7 @@ r3d:metadataStandard
 	rdfs:label "metadata standard document"@en ;
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:Respository ;
-	rdfs:range r3d:ReferenceDocument .
+	rdfs:range foaf:Document .
 
 r3d:certificate
 	a owl:ObjectProperty ;
@@ -191,28 +191,12 @@ r3d:certificate
 	rdfs:label "certificate document"@en ;
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:Respository ;
-	rdfs:range r3d:ReferenceDocument .
-
-r3d:size	#TODO the size property seems to be too broadly defined (not sur where to put this)
-	a owl:ObjectProperty ;
-	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
-	rdfs:label "repository size statement"@en ;
-	rdfs:comment "TODO"@en ;
-	rdfs:domain r3d:Respository ;
-	rdfs:range r3d:ReferenceDocument .
+	rdfs:range foaf:Document .
 
 r3d:syndication
 	a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "syndication documentation"@en ;
-	rdfs:comment "TODO"@en ;
-	rdfs:domain r3d:Respository ;
-	rdfs:range r3d:ReferenceDocument .
-
-r3d:metrics		#TODO not sure about this
-	a owl:ObjectProperty ;
-	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
-	rdfs:label "metrics documentation"@en ;
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:Respository ;
 	rdfs:range r3d:ReferenceDocument .
@@ -434,6 +418,22 @@ r3d:offline
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:Respository ;
 	rdfs:range xsd:date .
+
+r3d:metrics	
+	a owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	rdfs:label "metrics documentation"@en ;
+	rdfs:comment "TODO"@en ;
+	rdfs:domain r3d:Respository ;
+	rdfs:range rdfs:Literal .
+
+r3d:size	#TODO the size property seems to be too broadly defined (not sur where to put this)
+	a owl:DatatypeProperty ;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	rdfs:label "repository size statement"@en ;
+	rdfs:comment "TODO"@en ;
+	rdfs:domain r3d:Respository ;
+	rdfs:range rdfs:Literal .
 	
 r3d:software
 	a owl:DatatypeProperty ;
@@ -477,6 +477,7 @@ r3d:responsibilityEndDate
 		
 r3d:apiUrl
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf	dct:references ;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "API URL"@en ;
 	rdfs:comment "TODO"@en ;
@@ -506,3 +507,24 @@ r3d:enhancedPubliction
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:PublicationSupport ;
 	rdfs:range xsd:boolean .
+	
+############# Induviduals ################
+
+
+r3d:R3dIdScheme a datacite:ResourceIdentifierScheme, owl:NamedIndividual ;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	dct:title "re3data id scheme"@en ;
+    rdfs:label "re3data id scheme"@en ;
+	dct:description	"TODO"@en ;
+    rdfs:comment "TODO"@en .
+    
+r3d:ContactRole
+	a	org:Role, owl:NamedIndividual ;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	rdfs:label "contact role"@en ;
+	dct:title "contact role"@en ;
+	dct:description	"Represents a contact point (a Person or help desk...) of an institution or repository."@en ;
+	rdfs:comment "Points out the main contact of repository or institution."@en .
+	
+	#TODO add other roles if needed
+	
