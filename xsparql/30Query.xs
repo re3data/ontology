@@ -225,88 +225,85 @@ declare function r3dfunc:insert-institution ( $institution as node(), $uri as xs
 	}
 };
 
-let $agentCount := 0
-(: get root element :)
-let $repo := //r3d:re3data/r3d:repository[1]
-let $repp := $repo/*   (: repo children as iterable :)
-(: create repo uri :)
-let $uri := sparql:createURI(fn:concat("http://service.re3data.org/repository/", $repo/r3d:identifiers/r3d:re3data[1]/text()))
-(: r3d:repositoryName with lang-tag :)
-let $title := sparql:createLiteral($repo/r3d:repositoryName/text(), re3mappings:get-iso639P1(data($repo/r3d:repositoryName/@language)), "") 
-(: r3d:description with lang tag :)
-let $descr := for $p in $repo/r3d:description construct{ $uri dc:description {sparql:createLiteral($p/text(), re3mappings:get-iso639P1(data($p/@language)), "")} .}
-(: r3d:remarks :)
-let $remarks := for $p in $repo/r3d:remarks construct{ $uri rdfs:comment {sparql:createLiteral($p/text(), "en", "")} . }
-(: r3d:repositoryUrl :)
-let $url :=  for $p in $repo/r3d:repositoryUrl construct{ $uri foaf:landingpage {sparql:createURI($p/text())} .}
-(: r3d:missionStatementUrl :)
-let $msurl := for $z in $repo/r3d:missionStatementUrl construct{ $uri r3d:missionStatementUrl {sparql:createURI($z/text())} .}
-(: gather repository date properties :)
-let $entryDate := for $z in $repo/r3d:entryDate construct{$uri r3d:entryDate {sparql:createLiteral($z/text(), "", "xsd:date")} .}
-let $lastUpdate := for $z in $repo/r3d:lastUpdate construct{$uri r3d:lastUpdate {sparql:createLiteral($z/text(), "", "xsd:date")} .}
-let $startDate := for $z in $repo/r3d:startDate construct{$uri r3d:startDate {sparql:createLiteral($z/text(), "", "xsd:date")} .}
-let $closed := for $z in $repo/r3d:endDate/r3d:closed construct{$uri r3d:closed {sparql:createLiteral($z/text(), "", "xsd:date")} .}
-let $offline := for $z in $repo/r3d:endDate/r3d:offline construct{$uri r3d:offline {sparql:createLiteral($z/text(), "", "xsd:date")} .}
-(: r3d:additionalName :)
-let $additionalNames := for $name in $repo/r3d:additionalName construct{	$uri   dc:alternative  { sparql:createLiteral($name/text(), re3mappings:get-iso639P1(data($name/@language)), "")} . }
-(: r3d:repositoryIdentifier : create datacite identifier instances for all identifiers :)
-let $repoIds := for $id in $repo/r3d:repositoryIdentifier
-	return r3dfunc:insert-identifier ( $uri, "repositoryIdentifier", $id/r3d:repositoryIdentifierType/text(), $id/r3d:repositoryIdentifierValue/text(), $id/r3d:repositoryIdentifierValue/text() )
-(: r3d:doi : create datacite identifier instance :)
-let $doi := for $id in $repo/r3d:identifiers/r3d:doi return r3dfunc:insert-identifier ( $uri, "doi", "doi", $id/text(), $id/text() )
-(: r3d:re3data : create datacite identifier instance :)
-let $r3id := for $id in $repo/r3d:identifiers/r3d:re3data return r3dfunc:insert-identifier ( $uri, "uri", "uri", $id/text(), $uri )
-(: r3d:repositoryLanguage : create lexvo language instances :)
-let $repoLangs := for $lang in $repo/r3d:repositoryLanguage	return r3dfunc:insert-lexvo-language($lang/text(), $uri)
-(: r3d:syndication, r3d:metadataStandard, r3d:certificate :)
-let $refDocs := for $pos in (1 to fn:count($repp))
-	return if(fn:contains(fn:local-name($repp[$pos]), "certificate")) then
-				r3dfunc:insert-reference-doc ( $uri, $pos, fn:name($repp[$pos]), $repp[$pos]/text(), "The certificate, seal or standard the repository complies with.", (), () )
-		else
-			if(fn:contains(fn:local-name($repp[$pos]), "metadataStandard")) then
-				r3dfunc:insert-reference-doc ( $uri, $pos, fn:name($repp[$pos]), $repp[$pos]/r3d:metadataStandardName/text(), "The metadata standard the repository complies with.", (), $repp[$pos]/r3d:metadataStandardUrl/text() )
-		else
-			if(fn:contains(fn:local-name($repp[$pos]), "syndication")) then
-				r3dfunc:insert-reference-doc ( $uri, $pos, fn:name($repp[$pos]), $repp[$pos]/r3d:syndicationType/text(), "The alerting service the repository offers", (), $repp[$pos]/r3d:syndicationUrl/text() )
-		else ()
-(: r3d:keyword :)
-let $keywords := for $kw in $repo/r3d:keyword
-	construct{ $uri 	dc:subject 	{sparql:createLiteral($kw/text(), "", "")} . }
-(: r3d:contentType TODO: only parse types for now :)
-let $contentTypes := for $ct in $repo/r3d:contentType
-	construct{$uri 	r3d:contentType		{re3mappings:get-parse-type ( $ct )}}
-(: r3d:institution :)
-let $institution := for $i in $repo/r3d:institution	return r3dfunc:insert-institution ($i, $uri)
-(: r3d:repositoryContact TODO uri definition, see last parameter... :)
-let $contact := r3dfunc:insert-agent ($repo/r3d:repositoryContact, "r3d:repositoryContact", $uri, 1 ) 
-(: r3d:subject TODO the DFG subject are constructed by a makeshift function, which has to be replaced when taxonomy is ready :)
-let $subjects := for $s in $repo/r3d:subject construct{ $uri  r3d:subject 	{sparql:createURI(re3mappings:get-dfg-subject($s/r3d:subjectName/text()))} . }
-(: gather all regulations (policies/access/licenses)... :)
-let $regulations := for $pos in (1 to fn:count($repp))
-	where (fn:contains(fn:local-name($repp[$pos]), "Access") or fn:contains(fn:local-name($repp[$pos]), "License") or fn:contains(fn:local-name($repp[$pos]), "Upload") or fn:contains(fn:local-name($repp[$pos]), "policy"))
-	return r3dfunc:insert-regulation ( $repp[$pos], $uri, fn:name($repp[position()=$pos]), $pos )
-(: r3d:versioning :)
-let $vers := if($repo/r3d:versioning) then r3dfunc:provide-boolean( $repo/r3d:versioning/text(), $uri, "r3d:versioning" ) else ()
-(: r3d:software :)
-let $software := for $z in $repo/r3d:software construct{ $uri r3d:software	{$z/text()} . } 
-(: r3d:api :)
-let $apis := for $ind in (1 to fn:count($repo/r3d:api)) return r3dfunc:insert-api ( $repo/r3d:api[$ind], $uri, $ind )
-(: collect properties for publication support :)
-let $pubsup := r3dfunc:insert-publication-support ( $repo, $uri )
-(: r3d:metrics :)
-let $metrics := for $p in $repo/r3d:metrics construct{ $uri r3d:metrics {$repo/r3d:metrics/text()} . }
-(: r3d:qualityManagement :)
-let $qm := for $p in $repo/r3d:qualityManagement return r3dfunc:provide-boolean( $repo/r3d:qualityManagement/text(), $uri, "r3d:qualityManagement" )
-(: r3d:providerType TODO replace with actual method to get provider type uri!:)
-let $proty := for $p in $repo/r3d:providerType construct{ $uri r3d:providerType {sparql:createURI(fn:concat("r3proty:", re3mappings:capitalize-first( $p/text() )))} .}
-construct{	
-	$uri 				a 								r3d:Repository ;
-						dc:title						{$title} ;
-						rdfs:label						{$title} .
-		
-	{fn:distinct-values(
-	(	$descr, $additionalNames, $msurl, $repoIds, $doi, $r3id, $repoLangs, $refDocs, $keywords, $contentTypes, $institution, $contact, $subjects, 
-		$url, $regulations, $vers, $software, $apis, $pubsup, $metrics, $qm, $remarks, $entryDate, $startDate, $lastUpdate, $closed, $offline, $proty)
-	)}	
-
-}
+for $repo in //r3d:re3data/r3d:repository
+	let $repp := $repo/*   (: repo children as iterable :)
+	(: create repo uri :)
+	let $uri := sparql:createURI(fn:concat("http://service.re3data.org/repository/", $repo/r3d:identifiers/r3d:re3data[1]/text()))
+	(: r3d:repositoryName with lang-tag :)
+	let $title := sparql:createLiteral($repo/r3d:repositoryName/text(), re3mappings:get-iso639P1(data($repo/r3d:repositoryName/@language)), "") 
+	(: r3d:description with lang tag :)
+	let $descr := for $p in $repo/r3d:description construct{ $uri dc:description {sparql:createLiteral($p/text(), re3mappings:get-iso639P1(data($p/@language)), "")} .}
+	(: r3d:remarks :)
+	let $remarks := for $p in $repo/r3d:remarks construct{ $uri rdfs:comment {sparql:createLiteral($p/text(), "en", "")} . }
+	(: r3d:repositoryUrl :)
+	let $url :=  for $p in $repo/r3d:repositoryUrl construct{ $uri foaf:landingpage {sparql:createURI($p/text())} .}
+	(: r3d:missionStatementUrl :)
+	let $msurl := for $z in $repo/r3d:missionStatementUrl construct{ $uri r3d:missionStatementUrl {sparql:createURI($z/text())} .}
+	(: gather repository date properties :)
+	let $entryDate := for $z in $repo/r3d:entryDate construct{$uri r3d:entryDate {sparql:createLiteral($z/text(), "", "xsd:date")} .}
+	let $lastUpdate := for $z in $repo/r3d:lastUpdate construct{$uri r3d:lastUpdate {sparql:createLiteral($z/text(), "", "xsd:date")} .}
+	let $startDate := for $z in $repo/r3d:startDate construct{$uri r3d:startDate {sparql:createLiteral($z/text(), "", "xsd:date")} .}
+	let $closed := for $z in $repo/r3d:endDate/r3d:closed construct{$uri r3d:closed {sparql:createLiteral($z/text(), "", "xsd:date")} .}
+	let $offline := for $z in $repo/r3d:endDate/r3d:offline construct{$uri r3d:offline {sparql:createLiteral($z/text(), "", "xsd:date")} .}
+	(: r3d:additionalName :)
+	let $additionalNames := for $name in $repo/r3d:additionalName construct{	$uri   dc:alternative  { sparql:createLiteral($name/text(), re3mappings:get-iso639P1(data($name/@language)), "")} . }
+	(: r3d:repositoryIdentifier : create datacite identifier instances for all identifiers :)
+	let $repoIds := for $id in $repo/r3d:repositoryIdentifier
+		return r3dfunc:insert-identifier ( $uri, "repositoryIdentifier", $id/r3d:repositoryIdentifierType/text(), $id/r3d:repositoryIdentifierValue/text(), $id/r3d:repositoryIdentifierValue/text() )
+	(: r3d:doi : create datacite identifier instance :)
+	let $doi := for $id in $repo/r3d:identifiers/r3d:doi return r3dfunc:insert-identifier ( $uri, "doi", "doi", $id/text(), $id/text() )
+	(: r3d:re3data : create datacite identifier instance :)
+	let $r3id := for $id in $repo/r3d:identifiers/r3d:re3data return r3dfunc:insert-identifier ( $uri, "uri", "uri", $id/text(), $uri )
+	(: r3d:repositoryLanguage : create lexvo language instances :)
+	let $repoLangs := for $lang in $repo/r3d:repositoryLanguage	return r3dfunc:insert-lexvo-language($lang/text(), $uri)
+	(: r3d:syndication, r3d:metadataStandard, r3d:certificate :)
+	let $refDocs := for $pos in (1 to fn:count($repp))
+		return if(fn:contains(fn:local-name($repp[$pos]), "certificate")) then
+					r3dfunc:insert-reference-doc ( $uri, $pos, fn:name($repp[$pos]), $repp[$pos]/text(), "The certificate, seal or standard the repository complies with.", (), () )
+			else
+				if(fn:contains(fn:local-name($repp[$pos]), "metadataStandard")) then
+					r3dfunc:insert-reference-doc ( $uri, $pos, fn:name($repp[$pos]), $repp[$pos]/r3d:metadataStandardName/text(), "The metadata standard the repository complies with.", (), $repp[$pos]/r3d:metadataStandardUrl/text() )
+			else
+				if(fn:contains(fn:local-name($repp[$pos]), "syndication")) then
+					r3dfunc:insert-reference-doc ( $uri, $pos, fn:name($repp[$pos]), $repp[$pos]/r3d:syndicationType/text(), "The alerting service the repository offers", (), $repp[$pos]/r3d:syndicationUrl/text() )
+			else ()
+	(: r3d:keyword :)
+	let $keywords := for $kw in $repo/r3d:keyword
+		construct{ $uri 	dc:subject 	{sparql:createLiteral($kw/text(), "", "")} . }
+	(: r3d:contentType TODO: only parse types for now :)
+	let $contentTypes := for $ct in $repo/r3d:contentType
+		construct{$uri 	r3d:contentType		{re3mappings:get-parse-type ( $ct )}}
+	(: r3d:institution :)
+	let $institution := for $i in $repo/r3d:institution	return r3dfunc:insert-institution ($i, $uri)
+	(: r3d:repositoryContact TODO uri definition, see last parameter... :)
+	let $contact := r3dfunc:insert-agent ($repo/r3d:repositoryContact, "r3d:repositoryContact", $uri, 1 ) 
+	(: r3d:subject TODO the DFG subject are constructed by a makeshift function, which has to be replaced when taxonomy is ready :)
+	let $subjects := for $s in $repo/r3d:subject construct{ $uri  r3d:subject 	{sparql:createURI(re3mappings:get-dfg-subject($s/r3d:subjectName/text()))} . }
+	(: gather all regulations (policies/access/licenses)... :)
+	let $regulations := for $pos in (1 to fn:count($repp))
+		where (fn:contains(fn:local-name($repp[$pos]), "Access") or fn:contains(fn:local-name($repp[$pos]), "License") or fn:contains(fn:local-name($repp[$pos]), "Upload") or fn:contains(fn:local-name($repp[$pos]), "policy"))
+		return r3dfunc:insert-regulation ( $repp[$pos], $uri, fn:name($repp[position()=$pos]), $pos )
+	(: r3d:versioning :)
+	let $vers := if($repo/r3d:versioning) then r3dfunc:provide-boolean( $repo/r3d:versioning/text(), $uri, "r3d:versioning" ) else ()
+	(: r3d:software :)
+	let $software := for $z in $repo/r3d:software construct{ $uri r3d:software	{$z/text()} . } 
+	(: r3d:api :)
+	let $apis := for $ind in (1 to fn:count($repo/r3d:api)) return r3dfunc:insert-api ( $repo/r3d:api[$ind], $uri, $ind )
+	(: collect properties for publication support :)
+	let $pubsup := r3dfunc:insert-publication-support ( $repo, $uri )
+	(: r3d:metrics :)
+	let $metrics := for $p in $repo/r3d:metrics construct{ $uri r3d:metrics {$repo/r3d:metrics/text()} . }
+	(: r3d:qualityManagement :)
+	let $qm := for $p in $repo/r3d:qualityManagement return r3dfunc:provide-boolean( $repo/r3d:qualityManagement/text(), $uri, "r3d:qualityManagement" )
+	(: r3d:providerType TODO replace with actual method to get provider type uri!:)
+	let $proty := for $p in $repo/r3d:providerType construct{ $uri r3d:providerType {sparql:createURI(fn:concat("r3proty:", re3mappings:capitalize-first( $p/text() )))} .}
+	construct{	
+		$uri 				a 								r3d:Repository ;
+							dc:title						{$title} ;
+							rdfs:label						{$title} .
+			
+		{fn:distinct-values(
+		(	$descr, $additionalNames, $msurl, $repoIds, $doi, $r3id, $repoLangs, $refDocs, $keywords, $contentTypes, $institution, $contact, $subjects, 
+			$url, $regulations, $vers, $software, $apis, $pubsup, $metrics, $qm, $remarks, $entryDate, $startDate, $lastUpdate, $closed, $offline, $proty)
+		)}	
+	}
