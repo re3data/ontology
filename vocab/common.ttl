@@ -27,6 +27,29 @@
 	dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;#todo
 	dct:publisher <http://re3data.org> .
     
+	
+######## ClassificationShemeSuperClass ##########
+r3common:ClassificationScheme
+	a	owl:Class	;
+	rdfs:subClassOf	skos:ConceptScheme	;
+	dct:title		"Classification Scheme"@en ;
+	rdfs:label		"classification scheme"@en ;
+	dct:description	"The top class of all concept/identifier schemes used with the r3d:subject property."@en	;	
+	dct:modified	"12-07-2016"^^xsd:date	;	
+	dct:publisher	<http://re3data.org>	;
+	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> .	#TODO if any
+	
+##### ClassificationIdentifierSuperClass #######
+r3common:ClassificationIdentifier
+	a	owl:Class	;
+	rdfs:subClassOf skos:Concept	;
+	dct:title		"Classification Identifier"@en ;
+	rdfs:label		"classification identifier"@en ;
+	dct:description	"The top class of all concepts/identifiers used with the r3d:subject property."@en	;	
+	dct:modified	"12-07-2016"^^xsd:date	;	
+	dct:publisher	<http://re3data.org>	;
+	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> .	#TODO if any
+    
     
 ############### Publisher #################
 <http://re3data.org>		#TODO change uri , mbox, name if necessary
@@ -40,26 +63,3 @@
     a                        foaf:Agent ;
     foaf:mbox                "freudenberg@informatik.uni-leipzig.de" ;
     foaf:name                "Markus Freudenberg" .
-    
-	
-######## ClassificationShemeSuperClass ##########
-r3common:ClassificationScheme
-	a	owl:Class	;
-	rdfs:subClassOf	skos:ConceptScheme, datacite:ResourceIdentifierScheme	;
-	dct:title		"Classification Scheme"@en ;
-	rdfs:label		"classification scheme"@en ;
-	dct:description	"The top class of all concept/identifier schemes used with the r3d:subject property."@en	;	
-	dct:modified	"12-07-2016"^^xsd:date	;	
-	dct:publisher	<http://re3data.org>	;
-	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> .	#TODO if any
-	
-##### ClassificationIdentifierSuperClass #######
-r3common:ClassificationIdentifier
-	a	owl:Class	;
-	rdfs:subClassOf skos:Concept, datacite:ResourceIdentifier	;
-	dct:title		"Classification Identifier"@en ;
-	rdfs:label		"classification identifier"@en ;
-	dct:description	"The top class of all concepts/identifiers used with the r3d:subject property."@en	;	
-	dct:modified	"12-07-2016"^^xsd:date	;	
-	dct:publisher	<http://re3data.org>	;
-	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> .	#TODO if any

@@ -36,7 +36,7 @@ r3dfg:DfgClassificationNotation
    	rdfs:label 		"DFG classification notation"@en ;
    	rdfs:comment	"Datatype for the skos:notation property in the r3dfg:DfgClassification scheme."@en	;
 	owl:onDatatype  xsd:string ;
-	owl:withRestrictions (  [ xsd:pattern "[0-9]{7}" ] ) .
+	owl:withRestrictions (  [ xsd:pattern "[0-9]{1,5}" ] ) .
 	
 	
 ############# r3dfg:DfgClassification ################
@@ -59,106 +59,97 @@ r3dfg:DfgClassification
 	
 r3dfg:HumanitiesAndSocialSciences
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:topConceptOf r3dfg:DfgClassification	;
 	rdfs:label 		"Humanities and Social Sciences"@en	;
 	skos:prefLabel 	"Humanities and Social Sciences"@en	;
-	skos:notation	"1000000"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"1"^^r3dfg:DfgClassificationNotation	;
 	skos:narrower 	r3dfg:Humanities	;
 	skos:note		"TODO"@en .	
 		
 r3dfg:LifeSciences
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:topConceptOf r3dfg:DfgClassification	;
 	rdfs:label 		"Life Sciences"@en	;
 	skos:prefLabel 	"Life Sciences"@en	;
-	skos:notation	"2000000"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"2"^^r3dfg:DfgClassificationNotation	;
+	skos:exactMatch <http://id.loc.gov/authorities/subjects/sh85076841> ;
 	skos:note		"TODO"@en .	
 		
 r3dfg:NaturalSciences
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:topConceptOf r3dfg:DfgClassification	;
 	rdfs:label 		"Natural Sciences"@en	;
 	skos:prefLabel 	"Natural Sciences"@en	;
-	skos:notation	"3000000"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"3"^^r3dfg:DfgClassificationNotation	;
+	skos:broadMatch <http://id.loc.gov/authorities/subjects/sh89005705> ;
 	skos:note		"TODO"@en .	
 		
 r3dfg:EngineeringSciences
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:topConceptOf r3dfg:DfgClassification	;
 	rdfs:label 		"Engineering Sciences"@en	;
 	skos:prefLabel 	"Engineering Sciences"@en	;
-	skos:notation	"4000000"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"4"^^r3dfg:DfgClassificationNotation	;
 	skos:note		"TODO"@en .
 		
 r3dfg:Humanities
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Humanities"@en	;
 	skos:prefLabel 	"Humanities"@en	;
-	skos:notation	"1100000"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"11"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:HumanitiesAndSocialSciences	;
 	skos:narrower 	r3dfg:AncientCultures	;
 	skos:note		"TODO"@en .
 		
 r3dfg:AncientCultures
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Ancient Cultures"@en	;
 	skos:prefLabel 	"Ancient Cultures"@en	;
-	skos:notation	"1110100"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"11101"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:Humanities	;
 	skos:narrower 	r3dfg:Prehistory, r3dfg:ClassicalPhilology, r3dfg:AncientHistory, r3dfg:ClassicalArchaeology, r3dfg:EgyptologyAndAncientNearEasternStudies	;
 	skos:note		"TODO"@en .
 		
 r3dfg:Prehistory
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Prehistory"@en	;
 	skos:prefLabel 	"Prehistory"@en	;
-	skos:notation	"1110101"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"11101"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:AncientCultures	;
 	skos:note		"TODO"@en .
 		
 r3dfg:ClassicalPhilology
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Classical Philology"@en	;
 	skos:prefLabel 	"Classical Philology"@en	;
-	skos:notation	"1110102"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"11102"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:AncientCultures	;
 	skos:note		"TODO"@en .
 		
 r3dfg:AncientHistory
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Ancient History"@en	;
 	skos:prefLabel 	"Ancient History"@en	;
-	skos:notation	"1110103"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"11103"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:AncientCultures	;
 	skos:note		"TODO"@en .
 		
 r3dfg:ClassicalArchaeology
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Classical Archaeology"@en	;
 	skos:prefLabel 	"Classical Archaeology"@en	;
-	skos:notation	"1110104"^^r3dfg:DfgClassificationNotation	;
+	skos:notation	"11104"^^r3dfg:DfgClassificationNotation	;
 	skos:broader 	r3dfg:AncientCultures	;
 	skos:note		"TODO"@en .
 		
 r3dfg:EgyptologyAndAncientNearEasternStudies
 	a r3dfg:DfgClassification	;
-	datacite:usesIdentifierScheme 	r3dfg:DfgClassification	;
 	skos:inScheme 	r3dfg:DfgClassification	;
 	rdfs:label 		"Egyptology and Ancient Near Eastern Studies"@en	;
 	skos:prefLabel 	"Egyptology and Ancient Near Eastern Studies"@en	;

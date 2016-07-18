@@ -235,6 +235,7 @@ r3d:contentType
 
 r3d:re3data
 	a owl:ObjectProperty ;
+	rdfs:subPropertyOf	datacite:hasIdentifier;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "re3data identifier"@en ;
 	rdfs:comment "TODO"@en ;
@@ -251,8 +252,18 @@ r3d:subject
 
 r3d:doi
 	a owl:ObjectProperty ;
+	rdfs:subPropertyOf	datacite:hasIdentifier;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "DOI identifier"@en ;
+	rdfs:comment "TODO"@en ;
+	rdfs:domain r3d:Respository ;
+	rdfs:range datacite:Identifier .
+
+r3d:repositoryIdentifier
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf	datacite:hasIdentifier;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	rdfs:label "repository identifier"@en ;
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:Respository ;
 	rdfs:range datacite:Identifier .
@@ -291,6 +302,7 @@ r3d:reposits
 
 r3d:institutionIdentifier
 	a owl:ObjectProperty ;
+	rdfs:subPropertyOf	datacite:hasIdentifier;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "institution identifier"@en ;
 	rdfs:comment "TODO"@en ;

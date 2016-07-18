@@ -26,7 +26,7 @@ declare function re3mappings:resolve-prefixed-uri ( $n as xs:string )  {
 
 declare function re3mappings:capitalize-first( $arg as xs:string? )  as xs:string? {
 
-   fn:concat(fn:upper-case(fn:substring($arg,1,1)), fn:lower-case(fn:substring($arg,2)))
+   fn:concat(fn:upper-case(fn:substring($arg,1,1)), fn:substring($arg,2))
 } ;
 
 declare function re3mappings:get-country ( $alpha3 as xs:string )  {

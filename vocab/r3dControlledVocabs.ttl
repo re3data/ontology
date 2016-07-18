@@ -120,36 +120,6 @@ contributions must be linked to the particular project, mission, etc."""@en	;
 	skos:definition	"A research data repository that is not one of the listed repository types, e.g. a funder repository."@en	;
 	skos:note	"TODO"@en .
 	
-############# :ProviderType ################
-:ProviderType
-	a	owl:Class, skos:ConceptScheme	;
-	rdfs:subClassOf skos:Concept	;
-	dct:title		"Provider Type vocabulary"@en	;
-	dct:description	"The type of the RDR."@en	;		#TODO copied from schema doc 3.0 
-	dct:modified	"12-07-2016"^^xsd:date	;	
-	dct:publisher	<http://re3data.org>	;
-	dct:hasVersion	<http://version/specification/you/can/look/up/on/the/web> ;	#TODO
-	rdfs:label	"provider type"@en ;
-	skos:prefLabel	"provider type"@en ;
-	skos:altLabel	"TODO"@de	;
-	skos:note	"TODO"@en	.
-	
-:DataProvider
-	a	:ProviderType	;
-	rdfs:label "data provider"@en	;
-	skos:prefLabel "dataProvider"@en	;
-	skos:inScheme	:ProviderType	;
-	skos:definition	"A research data repository is a data provider if it offers research data and its metadata (ideally exposing metadata via interfaces)."@en	;
-	skos:note	"TODO"@en .
-	
-:ServiceProvider
-	a	:ProviderType	;
-	rdfs:label "service provider"@en	;
-	skos:prefLabel "serviceProvider"@en	;
-	skos:inScheme	:ProviderType	;
-	skos:definition	"A research data repository is a service provider if it harvests the metadata of research data from data providers as a basis for building value-added services."@en	;
-	skos:note	"TODO"@en .
-	
 ############# :ResponsibilityType ################
 :ResponsibilityType
 	a	owl:Class, skos:ConceptScheme	;
