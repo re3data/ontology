@@ -16,7 +16,6 @@
 @prefix datacite: <http://purl.org/spar/datacite/> .
 @prefix r3voc: <http://www.re3data.org/vocab/> .		#TODO: change to specific vocabularies
 @prefix r3common: <http://www.re3data.org/vocab/common#> .
-@prefix r3dfg:	<http://www.re3data.org/vocab/dfg#> .
 
 @base <http://www.re3data.org/schema/3-0#> .
 
@@ -248,7 +247,7 @@ r3d:subject
 	rdfs:label "subject identifier"@en ;
 	rdfs:comment "TODO"@en ;
 	rdfs:domain r3d:Respository ;
-	rdfs:range r3dfg:DfgClassification .
+	rdfs:range r3common:ClassificationIdentifier .
 
 r3d:doi
 	a owl:ObjectProperty ;
@@ -288,15 +287,30 @@ r3d:dataCatalog
 	a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "data catalog"@en ;
-	rdfs:comment "TODO"@en ;
+	rdfs:comment "Points out a dcat:Catalog with Datasets stored inside this Repository, with at least one Distribution"@en ;
 	rdfs:domain r3d:Respository ;
 	rdfs:range dcat:Catalog .
-
+	
+r3d:catalogRepository
+	a owl:ObjectProperty ;
+	owl:inverseOf r3d:dataCatalog	;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	rdfs:label "catalog repository"@en ;
+	rdfs:comment "Points out a Repository where Datasets of a the Cataloge are stored with at least one Distribution"@en .
+	
+r3d:inRepository
+	a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
+	rdfs:label "in repository"@en ;
+	rdfs:comment "Specifies a Repository in which a Distribution is stored."@en ;
+	rdfs:domain dcat:Distribution ;
+	rdfs:range r3d:Repository .
+	
 r3d:reposits
 	a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://www.re3data.org/schema/3-0> ;
 	rdfs:label "reposits"@en ;
-	rdfs:comment "TODO"@en ;
+	rdfs:comment "Points out a Dataset description of of data stored inside the Repository."@en ;
 	rdfs:domain r3d:Respository ;
 	rdfs:range dcat:Dataset .
 
