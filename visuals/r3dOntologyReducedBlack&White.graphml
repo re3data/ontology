@@ -18,9 +18,9 @@
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="347.40845360824744" width="223.0" x="844.806312468937" y="333.2435051546392"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="16" fontStyle="plain" hasLineColor="false" height="23.6015625" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="80.4765625" x="71.26171875" y="4.0">Repository
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="16" fontStyle="plain" hasLineColor="false" height="23.6015625" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="80.4765625" x="71.26171875" y="4.0">Repository
 </y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="209.81640625" modelName="custom" textColor="#000000" visible="true" width="204.126953125" x="2.0" y="35.6015625">rdfs:subClassOf: prov:Entity
 
@@ -52,10 +52,10 @@ r3d:qualityManagement : xsd:boolean
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="138.19999999999993" x="1375.8181155015182" y="471.801046746573"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="59.365234375" x="39.41738281249991" y="4.0">RepoType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="68.5927734375" x="34.80361328124991" y="4.0">RepoType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -73,9 +73,9 @@ r3d:qualityManagement : xsd:boolean
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="138.19999999999993" x="1375.8181155015182" y="520.5195748881529"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="86.072265625" x="26.06386718749991" y="4.0">	lvont:Language</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="86.072265625" x="26.06386718749991" y="4.0">	lvont:Language</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -94,9 +94,9 @@ r3d:qualityManagement : xsd:boolean
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="191.66120903362935" width="197.4000000000001" x="907.0614154574046" y="832.4885461210096"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="16" fontStyle="plain" hasLineColor="false" height="23.6015625" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="72.484375" x="62.457812500000045" y="4.0">Institution</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="16" fontStyle="plain" hasLineColor="false" height="23.6015625" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="72.484375" x="62.457812500000045" y="4.0">Institution</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="121.609375" modelName="custom" textColor="#000000" visible="true" width="194.1015625" x="2.0" y="35.6015625">subClassOf 
 org:Organization, prov:Organization
 
@@ -122,9 +122,9 @@ dc:description : rdfs:Literal
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="138.19999999999993" x="1375.8181155015182" y="851.4494332119067"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="132.748046875" x="2.725976562499909" y="4.0">lvont:GeographicRegion</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="132.748046875" x="2.725976562499909" y="4.0">lvont:GeographicRegion</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -143,10 +143,10 @@ dc:description : rdfs:Literal
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="118.99999999999989" x="1234.0181155015182" y="985.1282541302912"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="82.041015625" x="18.4794921875" y="4.0">InstitutionType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="95.0478515625" x="11.97607421875" y="4.0">InstitutionType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -164,10 +164,10 @@ dc:description : rdfs:Literal
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="64.69226804123707" width="141.56157412339803" x="500.69770822235307" y="328.7070236707007"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="36.009765625" x="52.775904249199016" y="4.0">Policy</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="41.3447265625" x="50.108423780449016" y="4.0">Policy</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -185,10 +185,10 @@ dc:description : rdfs:Literal
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="64.69226804123707" width="141.56157412339803" x="500.69770822235307" y="476.2812522548558"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="42.677734375" x="49.441919874199016" y="4.0">Access</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="49.1240234375" x="46.218775342949016" y="4.0">Access</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -206,10 +206,10 @@ dc:description : rdfs:Literal
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="64.69226804123707" width="141.56157412339803" x="500.69770822235307" y="402.49413796277827"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="45.361328125" x="48.100122999199016" y="4.0">License</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="52.2548828125" x="44.653345655449016" y="4.0">License</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -227,10 +227,10 @@ dc:description : rdfs:Literal
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="93.0" width="223.0" x="841.7911474962857" y="197.24312574812774"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="21.34375" x="100.828125" y="4.0">Api</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" modelName="custom" textColor="#000000" visible="true" width="188.072265625" x="2.0" y="30.701171875">r3d:apiUrl : rdfs:Resource
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="24.234375" x="99.3828125" y="4.0">Api</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" modelName="custom" textColor="#000000" visible="true" width="188.072265625" x="2.0" y="33.1513671875">r3d:apiUrl : rdfs:Resource
 foaf:page: foafDocument
 dc:description: rdfs:Literal
 r3d:wsdlDocument : rdfs:Resource<y:LabelModel>
@@ -250,10 +250,10 @@ r3d:wsdlDocument : rdfs:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.02150102434791" width="138.19999999999993" x="1076.935883954577" y="369.10401962934094"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="48.021484375" x="45.08925781249991" y="4.0">ApiType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="55.3583984375" x="41.42080078124991" y="4.0">ApiType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -271,10 +271,10 @@ r3d:wsdlDocument : rdfs:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="138.19999999999993" x="615.2383704916485" y="985.1282541302912"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="61.3515625" x="38.42421874999991" y="4.0">PidSystem</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="70.91015625" x="33.64492187499991" y="4.0">PidSystem</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -292,10 +292,10 @@ r3d:wsdlDocument : rdfs:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="64.69226804123707" width="210.0" x="460.92891760411" y="857.0560922749245"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="104.734375" x="52.6328125" y="4.0">PublicationSupport</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="200.810546875" x="2.0" y="30.701171875">r3d:citeGuidelineUrl : rdfs:Resource
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="121.5234375" x="44.23828125" y="4.0">PublicationSupport</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="200.810546875" x="2.0" y="33.1513671875">r3d:citeGuidelineUrl : rdfs:Resource
 r3d:enhancedPubliction: xsd:boolean<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -313,10 +313,10 @@ r3d:enhancedPubliction: xsd:boolean<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="93.0" width="210.0" x="1304.018115501518" y="369.10401962934094"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="114.056640625" x="47.9716796875" y="4.0">ReferenceDocument</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" modelName="custom" textColor="#000000" visible="true" width="155.400390625" x="2.0" y="30.701171875">dc:title : rdfs:Literal
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="132.3994140625" x="38.80029296875" y="4.0">ReferenceDocument</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" modelName="custom" textColor="#000000" visible="true" width="155.400390625" x="2.0" y="33.1513671875">dc:title : rdfs:Literal
 dc:reference : rdfs:Resource
 dc:modified : xsd:date
 dc:description<y:LabelModel>
@@ -336,10 +336,10 @@ dc:description<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="138.19999999999993" x="460.9289176041099" y="985.1282541302912"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="61.3515625" x="38.424218749999966" y="4.0">AidSystem</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="70.91015625" x="33.644921874999966" y="4.0">AidSystem</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -357,9 +357,9 @@ dc:description<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="54.0215010243478" width="210.0" x="460.92891760411" y="637.6637649628594"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="2.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="74.7109375" x="67.64453125" y="4.0">dcat:Catalog </y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="74.7109375" x="67.64453125" y="4.0">dcat:Catalog </y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -378,9 +378,9 @@ dc:description<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="54.0215010243478" width="210.0" x="460.92891760410987" y="701.9699036026967"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="2.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="71.37109375" x="69.314453125" y="4.0">dcat:Dataset</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="71.37109375" x="69.314453125" y="4.0">dcat:Dataset</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -399,9 +399,9 @@ dc:description<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="93.0" width="210.0" x="1304.018115501518" y="617.9566311713127"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="95.388671875" x="57.3056640625" y="4.0">datacite:Identifier</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="95.388671875" x="57.3056640625" y="4.0">datacite:Identifier</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" modelName="custom" textColor="#000000" visible="true" width="175.416015625" x="2.0" y="30.701171875">datacite:usesIdentifierSheme
 litre:hasLiteralValue : rdfs:Literal
 dct:issued : xsd:datetime
@@ -422,10 +422,10 @@ dc:title: rdfs:Literal<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="122.3690516717325" width="181.3303647416413" x="460.92891760410987" y="197.24312574812774"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="61.375" x="59.97768237082062" y="4.0">Regulation</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" modelName="custom" textColor="#000000" visible="true" width="178.076171875" x="2.0" y="30.701171875">subclassOf: dct:RightsStatement
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="70.9375" x="55.19643237082062" y="4.0">Regulation</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" modelName="custom" textColor="#000000" visible="true" width="178.076171875" x="2.0" y="33.1513671875">subclassOf: dct:RightsStatement
 
 dc:title : rdfs:Literal
 litre:hasLiteralValue : rdfs:Literal
@@ -446,9 +446,9 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.02150102434791" width="138.19999999999993" x="673.5911474962859" y="197.24312574812774"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="59.353515625" x="39.42324218749991" y="4.0">odlr:Policy</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="59.353515625" x="39.42324218749991" y="4.0">odlr:Policy</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -467,9 +467,9 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="82.8090206185567" x="1021.6523948388478" y="737.0595019297741"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="48.689453125" x="17.059783746778294" y="4.0">org:Post</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="48.689453125" x="17.059783746778294" y="4.0">org:Post</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -488,9 +488,9 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="141.56157412339815" x="1236.9414479209086" y="737.0595019297741"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.708984375" x="41.42629487419913" y="4.0">foaf:Agent</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="58.708984375" x="41.42629487419913" y="4.0">foaf:Agent</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -509,9 +509,9 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="82.8090206185567" x="1187.4855200858572" y="851.4494332119067"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="45.35546875" x="18.726775934278294" y="4.0">org:Site</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="45.35546875" x="18.726775934278294" y="4.0">org:Site</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -530,10 +530,10 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.02150102434791" width="118.99999999999989" x="609.9289176041098" y="577.3735202960929"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="69.35546875" x="24.822265625" y="4.0">AccessType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="80.248046875" x="19.3759765625" y="4.0">AccessType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -551,10 +551,10 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="118.99999999999989" x="460.9289176041099" y="577.3735202960928"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="99.361328125" x="9.819335937499943" y="4.0">AccessRestriction</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="115.2548828125" x="1.8725585937499432" y="4.0">AccessRestriction</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -572,7 +572,7 @@ dc:reference : foaf:Resource<y:LabelModel>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="156.3690516717325" width="340.43582050894656" x="1173.5822949925714" y="197.24312574812777"/>
-          <y:Fill color="#CCFFFF" transparent="false"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="124.0595703125" modelName="custom" textColor="#000000" visible="true" width="265.4951171875" x="37.47035166072328" y="16.154740679616253">	re3data ontology
 
@@ -595,9 +595,9 @@ concepts of external ontologies<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="24.021501024347913" width="29.199999999999932" x="1178.8911474962856" y="281.41690107182006"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="4.0" x="12.599999999999909" y="4.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="4.0" x="12.599999999999909" y="4.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="16.0">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -616,9 +616,9 @@ concepts of external ontologies<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="24.021501024347913" width="29.199999999999932" x="1178.8911474962856" y="314.2861277968236"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="4.0" x="12.599999999999909" y="4.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="4.0" x="12.599999999999909" y="4.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="16.0">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -637,9 +637,9 @@ concepts of external ontologies<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="24.021501024347913" width="29.199999999999818" x="1178.8911474962856" y="248.5476743468165"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="4.0" x="12.599999999999909" y="4.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="4.0" x="12.599999999999909" y="4.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="16.0">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -658,10 +658,10 @@ concepts of external ontologies<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.02150102434791" width="138.19999999999993" x="673.5911474962859" y="280.59067639551233"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="62.6875" x="37.75624999999991" y="4.0">PolicyType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="72.46875" x="32.86562499999991" y="4.0">PolicyType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -679,9 +679,9 @@ concepts of external ontologies<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="54.0215010243478" width="210.0" x="460.92891760411" y="766.276042242534"/>
-          <y:Fill color="#FFCC99" color2="#FFCC99" transparent="false"/>
+          <y:Fill color="#C0C0C0" color2="#C0C0C0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="2.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFCC00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="90.0390625" x="59.98046875" y="4.0">dcat:Distribution</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#C0C0C0" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="90.0390625" x="59.98046875" y="4.0">dcat:Distribution</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -700,10 +700,10 @@ concepts of external ontologies<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="64.69226804123707" width="153.31999999999994" x="1234.0181155015184" y="905.4534601626542"/>
-          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="78.033203125" x="37.643398437499854" y="4.0">Responsibility</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="154.732421875" x="2.0" y="30.701171875">r3d:responsibilityStartDate : 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#000000" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="90.3720703125" x="31.473964843749854" y="4.0">Responsibility</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="154.732421875" x="2.0" y="33.1513671875">r3d:responsibilityStartDate : 
 r3d:responsibilityEndDate :<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -721,10 +721,10 @@ r3d:responsibilityEndDate :<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="118.99999999999989" x="1395.0181155015182" y="985.1282541302912"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="104.7109375" x="7.14453125" y="4.0">ResponsibilityType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="121.49609375" x="-1.248046875" y="4.0">ResponsibilityType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -742,10 +742,10 @@ r3d:responsibilityEndDate :<y:LabelModel>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="39.0215010243478" width="138.19999999999993" x="1375.8181155015182" y="569.2381030297328"/>
-          <y:Fill color="#CCFFCC" color2="#CCFFCC" transparent="false"/>
+          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#00FF00" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="72.70703125" x="32.74648437499991" y="4.0">ContentType</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="30.701171875">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#808080" configuration="com.yworks.entityRelationship.label.name" fontFamily="Droid Sans" fontSize="14" fontStyle="plain" hasLineColor="false" height="21.1513671875" modelName="internal" modelPosition="t" textColor="#FFFFFF" visible="true" width="84.158203125" x="27.02089843749991" y="4.0">ContentType</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Droid Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="2.0" y="33.1513671875">
             <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
